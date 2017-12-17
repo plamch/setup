@@ -1,0 +1,18 @@
+.header {
+    &.container {
+        max-width: 720px;
+    }
+
+    & .logo {
+        display: block;
+        max-width: 290px;
+        padding-top: 60px;
+        margin-bottom: 50px;
+        animation: logo-color 15s linear 0s infinite;
+        cursor: pointer;
+    }
+
+    & .logo-icon {
+        display: none;
+    }
+}

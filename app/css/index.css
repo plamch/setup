@@ -1,0 +1,10 @@
+/* noinspection CssUnknownTarget */
+@import 'bootstrap';
+
+/* custom styling */
+@import './variables.css';
+@import './notifications.css';
+@import './loader.css';
+@import './header.css';
+@import './footer.css';
+@import './splash.css';

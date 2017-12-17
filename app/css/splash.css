@@ -1,0 +1,105 @@
+@keyframes logo-color {
+    0% {
+        color: #1e88e5;
+    }
+
+    20% {
+        color: #1e88e5;
+    }
+
+    25% {
+        color: #43a047;
+    }
+
+    40% {
+        color: #43a047;
+    }
+
+    50% {
+        color: #f9a825;
+    }
+
+    65% {
+        color: #f9a825;
+    }
+
+    75% {
+        color: #e53935;
+    }
+
+    90% {
+        color: #e53935;
+    }
+
+    100% {
+        color: #1e88e5;
+    }
+}
+
+.splash-page {
+    &.container {
+        max-width: 720px;
+    }
+
+    & .section {
+        margin-bottom: 50px;
+    }
+
+    & dd {
+        padding-bottom: 10px;
+    }
+
+    & h1,
+    & h2,
+    & h3 {
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    & h1,
+    & h3 {
+        font-size: 1.5rem;
+    }
+
+    & h2 {
+        position: relative;
+        padding-left: 46px;
+        margin-bottom: 30px;
+    }
+
+    & h2 .svg-inline--fa {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        color: #000;
+    }
+
+    & ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    & .address > span {
+        padding-bottom: 6px;
+    }
+
+    & a {
+        color: inherit;
+    }
+
+    & .services .svg-inline--fa {
+        color: #1e88e5;
+    }
+
+    & .technology .svg-inline--fa {
+        color: #f9a825;
+    }
+
+    & .methodology .svg-inline--fa {
+        color: #43a047;
+    }
+
+    & .values .svg-inline--fa {
+        color: #e53935;
+    }
+}

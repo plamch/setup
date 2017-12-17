@@ -1,0 +1,13 @@
+node_modules/
+.idea/
+npm-debug.log
+.happypack/
+/tests/test-results.html
+/dist
+/e2e/allure-results
+/e2e/allure-reports
+/e2e/allure-report
+/e2e/errorShots
+/.env
+/coverage
+.scannerwork

@@ -1,0 +1,1 @@
+You should copy these files into .git/hooks folder and also make them executable if needed // chmod +x <filename>
