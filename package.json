@@ -15,7 +15,7 @@
   },
   "author": "plam.ch",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "7.2.3",
     "babel-loader": "^7.1.2",
@@ -62,9 +62,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
-    "webpack-hot-middleware": "^2.21.0"
-  },
-  "dependencies": {
+    "webpack-hot-middleware": "^2.21.0",
     "@fortawesome/fontawesome": "^1.0.1",
     "@fortawesome/fontawesome-free-solid": "^5.0.1",
     "@fortawesome/react-fontawesome": "0.0.16",
