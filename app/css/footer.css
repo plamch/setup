@@ -1,5 +1,19 @@
 .footer {
-    &.container {
-        max-width: 720px;
+    & .row {
+        margin: 0 auto 30px auto;
+        display: flex;
+      }
+
+    & h2 .svg-inline--fa {
+        position: relative;
+        top: 7px;
+        left: 0;
+        color: #000;
     }
+
+    & .googlemap {
+        width: 100%;
+        border: none;
+        margin: auto;
+      }
 }

@@ -1,11 +1,24 @@
 import React, { PureComponent } from 'react'
+import { Link } from 'react-router-dom'
+import { getLink } from 'utils/getLink'
+import { HOME_PAGE } from 'constants/navigation'
 
 export class Header extends PureComponent {
+    scrollToFooter = () => {
+        const navElement = document.getElementById('footer')
+
+        navElement && navElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+        })
+    }
+
     render() {
         return (
             <header className="header container">
                 <div className="logo" id="logo">
-                    <a href="https://www.plam.ch" itemprop="url">
+                    <a href="https://www.plam.ch" itemProp="url">
                         <svg
                             version="1.1"
                             id="Layer_1"
@@ -16,7 +29,7 @@ export class Header extends PureComponent {
                             viewBox="0 0 690.6 340.7"
                             xmlSpace="preserve"
                             fill="currentColor"
-                            itemprop="logo"
+                            itemProp="logo"
                         >
                             <path
                                 d="M88.3,258.6c-14,0-25.4-2.1-34.4-6.4S36.2,242,27.6,234.4v-19.1C37.2,224,46.3,230.9,55,236c8.7,5.1,19.7,7.6,32.9,7.6
@@ -40,6 +53,79 @@ export class Header extends PureComponent {
                         </svg>
                     </a>
                 </div>
+                <nav className="nav">
+                    <div className="container">
+                        <button className="nav__toggle">
+                            <span className="nav__toggle__bar" />
+                            <span className="nav__toggle__bar" />
+                            <span className="nav__toggle__bar" />
+                        </button>
+                        <ul className="nav-main nav__nav container">
+                            <li className="active">
+                                <a href="#">
+                                    Services
+                                </a>
+                                <ul className="nav-sub nav__nav__child">
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Products
+                                </a>
+                                <ul className="nav-sub nav__nav__child">
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Hello
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <Link
+                                    to={getLink(HOME_PAGE)}
+                                    onClick={this.scrollToFooter}
+                                >
+                                    Say hello!
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </header>
         )
     }
