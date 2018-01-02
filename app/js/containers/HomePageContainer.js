@@ -27,7 +27,7 @@ class _HomePageContainer extends Component {
                     </h2>
                     <ul className="row">
                         <li className="col-12 col-sm-6 col-md-3">
-                            <h3>Web Development (Frontend and backend)</h3>
+                            <h3>Web Development</h3>
                             <p>Frequently demanded requirements, Browser support, Maintenance process</p>
                         </li>
                         <li className="col-12 col-sm-6 col-md-3">
@@ -166,7 +166,7 @@ class _HomePageContainer extends Component {
                                 specimen book.
                             </p>
                         </span>
-                        <div className="portfolio-button">
+                        <div className="portfolio-button-wrapper">
                             <button className="btn btn-primary">
                                 See portfolio
                             </button>
@@ -179,54 +179,22 @@ class _HomePageContainer extends Component {
                         <FontAwesomeIcon icon={faStar} />
                         <span className="section-title">Testimonials</span>
                     </h2>
-                    <div className="row">
-                        <div className="testimonials-information col-sm-12 col-lg-3">
-                            <h3>
-                                CEP
-                            </h3>
-                            <em>
-                                Front-End, Back-End, Design
-                            </em>
-                            <hr />
-                            <span>
-                                <FontAwesomeIcon icon={faQuoteLeft} className="testimonials-quote-icon" />
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry.
-                            </span>
-                        </div>
-                        <div className="testimonials-information col-sm-12 col-lg-3">
-                            <h3>
-                                CEP
-                            </h3>
-                            <em>
-                                Front-End, Back-End, Design
-                            </em>
-                            <hr />
-                            <span>
-                                <FontAwesomeIcon icon={faQuoteLeft} className="testimonials-quote-icon" />
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard dummy text ever since the 1500s, when an unknown
-                                printer took a type specimen book.
-                            </span>
-                        </div>
-                        <div className="testimonials-information col-sm-12 col-lg-3">
-                            <h3>
-                                CEP
-                            </h3>
-                            <em>
-                                Front-End, Back-End, Design
-                            </em>
-                            <hr />
-                            <span>
-                                <FontAwesomeIcon icon={faQuoteLeft} className="testimonials-quote-icon" />
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </span>
-                        </div>
+                    <div className="testimonials-information">
+                        <h3>
+                            CEP
+                        </h3>
+                        <em>
+                            Front-End, Back-End, Design
+                        </em>
+                        <hr />
+                        <span>
+                            <FontAwesomeIcon icon={faQuoteLeft} className="testimonials-quote-icon" />
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and scrambled it to make a type
+                            specimen book.
+                        </span>
                     </div>
                     <hr />
                 </section>

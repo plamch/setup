@@ -1,117 +1,109 @@
 .home-page {
     & .section {
-          margin-bottom: 50px;
-      }
+        margin-bottom: 50px;
+    }
 
     & dd {
-          padding-bottom: 10px;
-      }
+        padding-bottom: 10px;
+    }
 
     & h1,
     & h2,
     & h3 {
-          font-weight: 400;
-          line-height: 1.4;
-      }
+        font-weight: 400;
+        line-height: 1.4;
+    }
 
     & h1,
     & h3 {
-          font-size: 1.5rem;
-      }
+        font-size: 1.5rem;
+    }
 
     & h2 {
-          position: relative;
-          padding-left: 46px;
-          margin-bottom: 30px;
-      }
+        position: relative;
+        padding-left: 46px;
+        margin-bottom: 30px;
+    }
 
     & h2 .svg-inline--fa {
-          position: absolute;
-          top: 7px;
-          left: 0;
-          color: #000;
-      }
+        position: absolute;
+        top: 7px;
+        left: 0;
+        color: #000;
+    }
 
     & ul {
-          list-style: none;
-          padding: 0;
-          margin-left: auto;
-      }
+        list-style: none;
+        padding: 0;
+        margin-left: auto;
+    }
 
     & a {
-          color: inherit;
-      }
+        color: inherit;
+    }
 
     & .address > span {
-          padding-bottom: 6px;
-      }
-
+        padding-bottom: 6px;
+    }
 
     & .portfolio-logo {
-          height: 100%;
-      }
+        height: 100%;
+    }
 
     & .portfolio-information {
-          height: 100%;
-          padding: 20px;
-          background-color: rgba(229, 57, 53, .1);
+        height: 100%;
+        padding: 20px;
+        background-color: rgba(229, 57, 53, .1);
 
         & p {
             margin-bottom: 20px;
-          }
-      }
+        }
+    }
 
-    & .portfolio-button {
-          float: right;
-      }
-
-    & .portfolio > div {
-          margin-left: auto;
-      }
+    & .portfolio-button-wrapper {
+        text-align: right;
+    }
 
     & .testimonials > div {
-        margin: auto;
-        display: flex;
-        align-items: flex-start;
-      }
+    }
 
     & .testimonials {
         & .svg-inline--fa {
-             color: #f9a825;
-         }
+            color: #f9a825;
+        }
     }
 
     & .testimonials-information {
-          margin: 0 auto 0 auto;
-          padding: 20px;
-          background-color: rgba(249, 168, 37, .1);
+        margin: 0 auto 0 auto;
+        padding: 20px;
+        background-color: rgba(249, 168, 37, .1);
     }
 
     & .testimonials-quote-icon {
         margin: 0 5px 10px 0;
-      }
+    }
 
     & .services .svg-inline--fa {
-          color: #1e88e5;
-      }
+        color: #1e88e5;
+    }
 
     & .products .svg-inline--fa {
-          color: #43a047;
-      }
+        color: #43a047;
+    }
 
     & .technology .svg-inline--fa {
-          color: #e0dc08;
-      }
+        color: #e0dc08;
+    }
 
     & .methodology .svg-inline--fa {
-          color: #f9a825;
-      }
+        color: #f9a825;
+    }
 
     & .portfolio .svg-inline--fa {
-          color: #e53935;
-      }
+        color: #e53935;
+    }
 
     & .blog .svg-inline--fa {
-      color: #e0dc08;
+        color: #e0dc08;
     }
 }

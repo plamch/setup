@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { Button } from 'reactstrap'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faPhone, faAt, faMapMarkerAlt } from '@fortawesome/fontawesome-free-solid'
 
@@ -24,11 +25,10 @@ export class Footer extends PureComponent {
                 <section className="section">
                     <div className="contact-us-form">
                         <form action="">
-                            <p>Say Hello! Or whatever you want!</p>
-                            <input name="name" type="text" placeholder="Name" id="name" required />
+                            <h3 className="contact-us-form-title">Say Hello! Or whatever you want!</h3>
                             <input name="email" type="email" placeholder="Email" id="email" required />
                             <textarea name="text" placeholder="Message" />
-                            <input type="submit" value="Send" id="button-blue" />
+                            <Button color="primary">Send</Button>
                             <div className="row">
                                 <address>
                                     <span className="col-sm-3">
