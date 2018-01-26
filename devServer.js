@@ -17,7 +17,7 @@ const compiler = webpack(config)
 const subval1MockData = require('./mock-data/subval1.json')
 const val1MockData = require('./mock-data/mockSubFolder/val1.json')
 
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
+app.use(webpackDevMiddleware(compiler, { logLevel: 'warn', publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
