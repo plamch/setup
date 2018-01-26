@@ -7,9 +7,7 @@ import { NotificationContainer } from 'react-notifications'
 import { Helmet } from 'react-helmet'
 import { configureStore } from 'store/createStore'
 import { withTracker } from 'higherOrderComponents'
-import {
-    SiteLoaderContainer,
-} from 'containers'
+import { SiteLoaderContainer } from 'containers'
 import { SplashPage, Header, Footer, NotFound } from '.'
 import { SPLASH_PAGE } from 'constants/navigation'
 import { getLink } from 'utils/getLink'
@@ -29,7 +27,7 @@ export const createRoot = (store = defaultStore, name = 'Root') => {
             return (
                 <Provider store={store}>
                     <ConnectedRouter history={history}>
-                        <div>
+                        <div className="siteWrapper">
                             <Helmet>
                                 {isProduction()
                                     ? null
@@ -52,6 +50,7 @@ export const createRoot = (store = defaultStore, name = 'Root') => {
             )
         }
 
+        // noinspection JSUnusedGlobalSymbols
         static displayName = name
     }
 }
