@@ -1,6 +1,7 @@
 node_modules/
 .idea/workspace.xml
 .idea/libraries
+.idea/dictionaries
 npm-debug.log
 .happypack/
 /tests/test-results.html
