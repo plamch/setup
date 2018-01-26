@@ -24,7 +24,7 @@
         cursor: pointer;
         transition: all 0.2s;
         background-color: #4c8ffc;
-        background-image: linear-gradient(top, #4c8ffc, #4889f0);
+        background-image: linear-gradient(to bottom, #4c8ffc, #4889f0);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
 
