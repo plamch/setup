@@ -7,7 +7,7 @@ import { NotificationContainer } from 'react-notifications'
 import { Helmet } from 'react-helmet'
 import { configureStore } from 'store/createStore'
 import { withTracker } from 'higherOrderComponents'
-import { SiteLoaderContainer, HomePageContainer, ServicePageContainer } from 'containers'
+import { SiteLoaderContainer, HomePageContainer, ServicesPageContainer } from 'containers'
 import { SplashPage, Header, Footer, NotFound } from '.'
 import { SPLASH_PAGE, HOME_PAGE, SERVICE_PAGE } from 'constants/navigation'
 import { getLink } from 'utils/getLink'
@@ -43,7 +43,7 @@ export const createRoot = (store = defaultStore, name = 'Root') => {
                                 <Route path={getLink(HOME_PAGE)} component={withTracker(HomePageContainer)} />
                                 <Route
                                     path={getLink(`${SERVICE_PAGE}/:service`)}
-                                    component={withTracker(ServicePageContainer)}
+                                    component={withTracker(ServicesPageContainer)}
                                 />
                                 <Route component={withTracker(NotFound)} />
                             </Switch>
