@@ -1,39 +1,21 @@
 @keyframes logo-color {
-    0% {
-        color: #1e88e5;
-    }
+    0% { color: #1e88e5; }
 
-    20% {
-        color: #1e88e5;
-    }
+    20% { color: #1e88e5; }
 
-    25% {
-        color: #43a047;
-    }
+    25% { color: #43a047; }
 
-    40% {
-        color: #43a047;
-    }
+    40% { color: #43a047; }
 
-    50% {
-        color: #f9a825;
-    }
+    50% { color: #f9a825; }
 
-    65% {
-        color: #f9a825;
-    }
+    65% { color: #f9a825; }
 
-    75% {
-        color: #e53935;
-    }
+    75% { color: #e53935; }
 
-    90% {
-        color: #e53935;
-    }
+    90% { color: #e53935; }
 
-    100% {
-        color: #1e88e5;
-    }
+    100% { color: #1e88e5; }
 }
 
 .splash-page {
