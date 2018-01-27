@@ -5,7 +5,7 @@ export class Header extends PureComponent {
         return (
             <header className="header container">
                 <div className="logo" id="logo">
-                    <a href="https://www.plam.ch" itemprop="url">
+                    <a itemprop="url">
                         <svg
                             version="1.1"
                             id="Layer_1"
