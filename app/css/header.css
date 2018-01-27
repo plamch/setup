@@ -1,8 +1,4 @@
 .header {
-    &.container {
-        max-width: 720px;
-    }
-
     & .logo {
         display: block;
         max-width: 290px;

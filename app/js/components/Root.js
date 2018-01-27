@@ -7,9 +7,9 @@ import { NotificationContainer } from 'react-notifications'
 import { Helmet } from 'react-helmet'
 import { configureStore } from 'store/createStore'
 import { withTracker } from 'higherOrderComponents'
-import { SiteLoaderContainer } from 'containers'
+import { SiteLoaderContainer, HomePageContainer, ServicePageContainer } from 'containers'
 import { SplashPage, Header, Footer, NotFound } from '.'
-import { SPLASH_PAGE } from 'constants/navigation'
+import { SPLASH_PAGE, HOME_PAGE, SERVICE_PAGE } from 'constants/navigation'
 import { getLink } from 'utils/getLink'
 import { isProduction } from 'utils/utils'
 
@@ -40,6 +40,11 @@ export const createRoot = (store = defaultStore, name = 'Root') => {
                             <Switch>
                                 <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
                                 <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />
+                                <Route path={getLink(HOME_PAGE)} component={withTracker(HomePageContainer)} />
+                                <Route
+                                    path={getLink(`${SERVICE_PAGE}/:service`)}
+                                    component={withTracker(ServicePageContainer)}
+                                />
                                 <Route component={withTracker(NotFound)} />
                             </Switch>
                             <Footer />
