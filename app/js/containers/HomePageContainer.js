@@ -20,7 +20,7 @@ class _HomePageContainer extends Component {
     render() {
         return (
             <main className="home-page container">
-                <section className="services section">
+                <section className="services section" id="services-section">
                     <h2>
                         <FontAwesomeIcon icon={faThumbsUp} />
                         <span className="section-title">Services</span>

@@ -122,12 +122,22 @@ export const countNonUndefinedElements = array => array
 
 export const toIconUrl = fileName => `/img/icons/${fileName}.png`
 
-export const scrollToHeader = () => {
-    const navElement = document.getElementById('nav')
+export const scrollToId = id => event => {
+    event.preventDefault()
+
+    const navElement = document.getElementById(id)
 
     navElement && navElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
     })
+}
+
+export const scrollToHeader = event => {
+    scrollToId('nav')(event)
+}
+
+export const scrollToFooter = event => {
+    scrollToId('footer')(event)
 }
