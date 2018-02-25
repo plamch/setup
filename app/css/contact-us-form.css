@@ -11,14 +11,13 @@
         background: #f1f1f1;
         margin: 5% 33%;
         padding: 2%;
-
         border-radius: 2px;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         display: block;
         margin-top: 20px;
     }
 
-    & [type="submit"]:hover {
+    & [type='submit']:hover {
         border-color: #c6c6c6;
         color: #fff;
         cursor: pointer;

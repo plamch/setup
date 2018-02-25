@@ -2,7 +2,7 @@
     & .row {
         margin: 0 auto 30px auto;
         display: flex;
-      }
+    }
 
     & h2 .svg-inline--fa {
         position: relative;
@@ -15,5 +15,5 @@
         width: 100%;
         border: none;
         margin: auto;
-      }
+    }
 }
