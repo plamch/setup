@@ -1,7 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const HappyPack = require('happypack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
@@ -32,7 +30,7 @@ const API_PATH = '/cep' // only preceding slash '/', e.g. '/my/api/path'
 const HOST_URL = '/'
 
 module.exports = {
-    devtool: 'eval',
+    mode: 'production',
     context: __dirname,
     entry: ['babel-polyfill', './app/js'],
     output: {
@@ -97,29 +95,6 @@ module.exports = {
                 HOST_URL: JSON.stringify(HOST_URL)
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            // sourceMap: false,
-            // mangle: false,
-            // compress: {
-            //     warnings: true
-            // },
-            // comments: false
-        }),
-        new HtmlWebpackPlugin({
-            title: 'CEP',
-            filename: 'index.html',
-            template: './app/index.html',
-            inject: false,
-            appMountId: 'app',
-            baseHref: HOST_URL
-        }),
-        new HappyPack({
-            loaders: [
-                {
-                    path: 'babel-loader'
-                }
-            ]
-        }),
         new ExtractTextPlugin(`bundle.css`),
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
@@ -127,8 +102,12 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
+                from: `${path.join(__dirname, 'app', 'index.html')}`,
+                to: './'
+            },
+            {
                 from: `${path.join(__dirname, 'build-assets', '.htaccess')}`,
-                to: `${path.join(__dirname, 'dist')}`
+                to: './'
             },
             {
                 from: `${path.join(__dirname, 'build-assets', 'favicon.ico')}`,
@@ -136,7 +115,7 @@ module.exports = {
             },
             {
                 from: `${path.join(__dirname, 'app', 'img')}`,
-                to: `${path.join(__dirname, 'dist', 'img')}`
+                to: './img'
             }
         ])
     ],

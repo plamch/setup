@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const HappyPack = require('happypack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const chalk = require('chalk')
@@ -30,6 +29,7 @@ const API_PATH = '/v1' // only preceding slash '/', e.g. '/my/api/path'
 const HOST_URL = '/'
 
 module.exports = {
+    mode: 'development',
     devtool: 'cheap-module-source-map',
     context: __dirname,
     entry: [
@@ -51,7 +51,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'happypack/loader',
+                loader: 'babel-loader',
                 exclude: /node_modules/
             },
             {
@@ -99,14 +99,6 @@ module.exports = {
                 API_PATH: JSON.stringify(API_PATH),
                 HOST_URL: JSON.stringify(HOST_URL)
             }
-        }),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new HappyPack({
-            loaders: [
-                {
-                    path: 'babel-loader'
-                }
-            ]
         }),
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
