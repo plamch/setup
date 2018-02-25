@@ -1,5 +1,6 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
+    <option name="LINE_SEPARATOR" value="&#10;" />
     <CssCodeStyleSettings>
       <option name="HEX_COLOR_LOWER_CASE" value="true" />
       <option name="HEX_COLOR_SHORT_FORMAT" value="true" />
