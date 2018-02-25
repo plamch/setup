@@ -51,16 +51,16 @@ class _ModalContainer extends Component {
     renderModalNotification = () => {
         const { serverError } = this.props
 
-        return serverError.get('hasError') ?
+        return serverError.get('hasError') ? (
             <NotificationMessage
                 type="danger"
                 message={serverError.get('message')}
                 close={this.closeServerErrorNotification}
             />
-            : null
+        ) : null
     }
 
-    render() {
+    render () {
         const { isOpen, children } = this.props
 
         return (
@@ -76,7 +76,7 @@ class _ModalContainer extends Component {
     }
 
     static defaultProps = {
-        modalHeaderIKey: ''
+        modalHeaderIKey: '',
     }
 
     static propTypes = {
@@ -88,18 +88,20 @@ class _ModalContainer extends Component {
         resetFormInputFields: func,
         resetFormServerError: func,
         closeModal: func,
-        children: any
+        children: any,
     }
 }
 
-
-
 export const ModalContainer = connect(
     state => ({
-        serverError: formServerErrorSelector(state)
+        serverError: formServerErrorSelector(state),
     }),
-    dispatch => bindActionCreators({
-        resetFormInputFields,
-        resetFormServerError
-    }, dispatch)
+    dispatch =>
+        bindActionCreators(
+            {
+                resetFormInputFields,
+                resetFormServerError,
+            },
+            dispatch
+        )
 )(_ModalContainer)

@@ -5,40 +5,40 @@ import {
     RESET_FORM_INPUT_FIELDS,
     RESET_FORM_INPUT_ERROR,
     RESET_FORM_SERVER_ERROR,
-    SUBMIT_MASS_MAIL_FORM
+    SUBMIT_MASS_MAIL_FORM,
 } from '~constants/form'
 
 export const setFormInputField = ({ formName, inputName, inputValue }) => ({
     type: SET_FORM_INPUT_FIELD,
-    payload: { formName, inputName, inputValue }
+    payload: { formName, inputName, inputValue },
 })
 
 export const setFormInputError = ({ formName, inputName, errorMessage }) => ({
     type: SET_FORM_INPUT_ERROR,
-    payload: { formName, inputName, errorMessage }
+    payload: { formName, inputName, errorMessage },
 })
 
 export const setFormServerError = ({ formName, message }) => ({
     type: SET_FORM_SERVER_ERROR,
-    payload: { formName, message }
+    payload: { formName, message },
 })
 
 export const resetFormInputFields = ({ formName }) => ({
     type: RESET_FORM_INPUT_FIELDS,
-    payload: { formName }
+    payload: { formName },
 })
 
 export const resetFormInputError = ({ formName, inputName }) => ({
     type: RESET_FORM_INPUT_ERROR,
-    payload: { formName, inputName }
+    payload: { formName, inputName },
 })
 
 export const resetFormServerError = () => ({
     type: RESET_FORM_SERVER_ERROR,
-    payload: {}
+    payload: {},
 })
 
 export const submitMassMailForm = ({ massMailSubject, massMailBody, massMailSessionId }) => ({
     type: SUBMIT_MASS_MAIL_FORM,
-    payload: { massMailSubject, massMailBody, massMailSessionId }
+    payload: { massMailSubject, massMailBody, massMailSessionId },
 })

@@ -12,37 +12,26 @@ export const toggleForm = (formName, DecoratedComponent) => {
         state = {
             sessionId: '',
             selectedAccount: Map(),
-            [`is${formName}Visible`]: false
+            [`is${formName}Visible`]: false,
         }
 
-        toggleFormVisibility = ({
-            sessionId = '',
-            selectedAccount = Map(),
-        } = {}) => this.setState({
-            sessionId,
-            selectedAccount,
-            [`is${formName}Visible`]: !this.state[`is${formName}Visible`]
-        })
-
-        render() {
-            const {
+        toggleFormVisibility = ({ sessionId = '', selectedAccount = Map() } = {}) =>
+            this.setState({
                 sessionId,
                 selectedAccount,
-                [`is${formName}Visible`]: isFormVisible
-            } = this.state
+                [`is${formName}Visible`]: !this.state[`is${formName}Visible`],
+            })
+
+        render () {
+            const { sessionId, selectedAccount, [`is${formName}Visible`]: isFormVisible } = this.state
             const passedDownProps = {
                 sessionId,
                 selectedAccount,
                 [`is${formName}FormVisible`]: isFormVisible,
-                [`toggle${formName}FormVisibility`]: this.toggleFormVisibility
+                [`toggle${formName}FormVisibility`]: this.toggleFormVisibility,
             }
 
-            return (
-                <DecoratedComponent
-                    {...this.props}
-                    {...passedDownProps}
-                />
-            )
+            return <DecoratedComponent {...this.props} {...passedDownProps} />
         }
     }
 

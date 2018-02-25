@@ -8,7 +8,7 @@ import { isTesting } from '~utils/utils'
 const allReducers = {
     loading,
     routerReducer,
-    form
+    form,
 }
 
 if (isTesting()) {

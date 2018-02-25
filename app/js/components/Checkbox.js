@@ -13,7 +13,7 @@ export class Checkbox extends Component {
                     {...{
                         id,
                         checked,
-                        onChange
+                        onChange,
                     }}
                 />
                 <label htmlFor={id}>{value}</label>
@@ -22,13 +22,13 @@ export class Checkbox extends Component {
     }
 
     static defaultProps = {
-        checked: false
+        checked: false,
     }
 
     propTypes = {
         checked: bool,
         id: string.isRequired,
         value: string.isRequired,
-        onChange: func.isRequired
+        onChange: func.isRequired,
     }
 }

@@ -13,11 +13,11 @@ import {
     faStar,
     faPencilAlt,
     faQuoteLeft,
-    faPaperPlane
+    faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
 
 class _HomePageContainer extends Component {
-    render() {
+    render () {
         return (
             <main className="home-page container">
                 <section className="services section" id="services-section">
@@ -152,24 +152,16 @@ class _HomePageContainer extends Component {
                             alt="CEP logo"
                         />
                         <span className="portfolio-information col-sm-8">
-                            <h3>
-                                CEP
-                            </h3>
-                            <span>
-                                Website
-                            </span>
+                            <h3>CEP</h3>
+                            <span>Website</span>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type
-                                specimen book.
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book.
                             </p>
                         </span>
                         <div className="portfolio-button-wrapper">
-                            <button className="btn btn-primary">
-                                See portfolio
-                            </button>
+                            <button className="btn btn-primary">See portfolio</button>
                         </div>
                     </div>
                     <hr />
@@ -180,20 +172,14 @@ class _HomePageContainer extends Component {
                         <span className="section-title">Testimonials</span>
                     </h2>
                     <div className="testimonials-information">
-                        <h3>
-                            CEP
-                        </h3>
-                        <em>
-                            Front-End, Back-End, Design
-                        </em>
+                        <h3>CEP</h3>
+                        <em>Front-End, Back-End, Design</em>
                         <hr />
                         <span>
                             <FontAwesomeIcon icon={faQuoteLeft} className="testimonials-quote-icon" />
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown
-                            printer took a galley of type and scrambled it to make a type
-                            specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
                         </span>
                     </div>
                     <hr />
@@ -211,9 +197,6 @@ class _HomePageContainer extends Component {
     }
 }
 
-export const HomePageContainer = connect(
-    state => ({
-    }),
-    dispatch => bindActionCreators({
-    }, dispatch)
-)(_HomePageContainer)
+export const HomePageContainer = connect(state => ({}), dispatch => bindActionCreators({}, dispatch))(
+    _HomePageContainer
+)

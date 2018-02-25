@@ -6,7 +6,7 @@ import { handleSagaError } from './utils'
 import { massMailService } from '~utils/services'
 import { createNotification } from '~utils/utils'
 
-function * submitMassMailFormWorker({ payload: { massMailSubject, massMailBody, massMailSessionId } }) {
+function * submitMassMailFormWorker ({ payload: { massMailSubject, massMailBody, massMailSessionId } }) {
     try {
         yield put(startLoading({ loader: IS_MASS_MAIL_FORM_SUBMITTING }))
 
@@ -15,7 +15,7 @@ function * submitMassMailFormWorker({ payload: { massMailSubject, massMailBody, 
         options.data = {
             $SesUniTxt: massMailSessionId,
             $Subject: massMailSubject,
-            $Body: massMailBody
+            $Body: massMailBody,
         }
 
         const { data } = yield call(massMailService, options)
@@ -23,7 +23,7 @@ function * submitMassMailFormWorker({ payload: { massMailSubject, massMailBody, 
         createNotification({
             type: 'success',
             title: 'Form sent',
-            message: data && data.toString()
+            message: data && data.toString(),
         })
     } catch (error) {
         yield call(handleSagaError, { error })
@@ -37,7 +37,5 @@ const submitMassMailFormWatcher = function * () {
 }
 
 export const formSaga = function * () {
-    yield all([
-        submitMassMailFormWatcher()
-    ])
+    yield all([submitMassMailFormWatcher()])
 }

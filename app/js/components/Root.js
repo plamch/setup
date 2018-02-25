@@ -29,10 +29,7 @@ export const createRoot = (store = defaultStore, name = 'Root') => {
                     <ConnectedRouter history={history}>
                         <div className="siteWrapper">
                             <Helmet>
-                                {isProduction()
-                                    ? null
-                                    : <meta name="robots" content="noindex, nofollow" />
-                                }
+                                {isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}
                             </Helmet>
                             <NotificationContainer />
                             <SiteLoaderContainer />

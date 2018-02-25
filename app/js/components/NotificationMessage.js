@@ -18,12 +18,12 @@ export class NotificationMessage extends Component {
     }
 
     static defaultProps = {
-        type: ''
+        type: '',
     }
 
     static propTypes = {
         type: string,
         message: string.isRequired,
-        close: func.isRequired
+        close: func.isRequired,
     }
 }

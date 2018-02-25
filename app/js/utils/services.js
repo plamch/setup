@@ -1,38 +1,37 @@
 import React from 'react'
 import axios from 'axios'
 import { ParseGlobalNetworkError } from '~utils/utils'
-import {
-    FETCH_SEARCH_RESULTS_SERVICE,
-    MASS_MAIL_SERVICE
-} from '~constants/api'
+import { FETCH_SEARCH_RESULTS_SERVICE, MASS_MAIL_SERVICE } from '~constants/api'
 
 const BASE_URL = process.env.API_URL
 const BASE_URL_WITH_PATH = BASE_URL + process.env.API_PATH
 
-const axiosInstanceFactory = disablePrefix => axios.create({
-    baseURL: disablePrefix ? '' : BASE_URL_WITH_PATH,
-    timeout: 100000
-})
+const axiosInstanceFactory = disablePrefix =>
+    axios.create({
+        baseURL: disablePrefix ? '' : BASE_URL_WITH_PATH,
+        timeout: 100000,
+    })
 
 const servicesDesc = [
     {
         name: FETCH_SEARCH_RESULTS_SERVICE,
-        url: '/v1/search'
+        url: '/v1/search',
     },
     {
         name: MASS_MAIL_SERVICE,
         url: '/v1/massMail',
-        method: 'POST'
-    }
+        method: 'POST',
+    },
 ]
 
 export const successCallback = (resolve, reject) => response => resolve(response)
 
-export const errorCallback = reject => (error = {}) => reject({
-    message: ParseGlobalNetworkError({
-        errorCode: typeof error.response === 'object' ? error.response.status : 'unauthorized'
+export const errorCallback = reject => (error = {}) =>
+    reject({
+        message: ParseGlobalNetworkError({
+            errorCode: typeof error.response === 'object' ? error.response.status : 'unauthorized',
+        }),
     })
-})
 
 const services = servicesDesc.reduce((acc, service) => {
     acc[service.name] = ({ data, params, headers } = {}) => {

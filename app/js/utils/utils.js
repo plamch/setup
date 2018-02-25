@@ -20,17 +20,22 @@ export const multipleReplace = ({ string, find, replace }) => {
     return string
 }
 
-export const ParseGlobalNetworkError = ({ errorCode }) =>
+export const ParseGlobalNetworkError = ({ errorCode }) => (
     <span>
-        <span>{'System has encountered an error.'}</span><br />
-        <span>{'Please reach out to the plam.ch team info@plam.ch'}</span><br />
-        <span>{'with a screenshot of this error.'}</span><br />
-        <span>{`Code: ${errorCode}.`}</span><br />
+        <span>{'System has encountered an error.'}</span>
+        <br />
+        <span>{'Please reach out to the plam.ch team info@plam.ch'}</span>
+        <br />
+        <span>{'with a screenshot of this error.'}</span>
+        <br />
+        <span>{`Code: ${errorCode}.`}</span>
+        <br />
         <span>{`Error Description: Request failed with status code ${errorCode}`}</span>
     </span>
+)
 
 ParseGlobalNetworkError.propTypes = {
-    errorCode: any.isRequired
+    errorCode: any.isRequired,
 }
 
 export const createNotification = ({ type, message, title = '', timeout = MESSAGE_TIMEOUT } = {}) =>
@@ -60,65 +65,55 @@ export const logInDevOnly = ({ message = '', type = 'error' }) => {
 
 export const checkIsNavItemActive = ({ itemPathname, currentPathname }) => currentPathname.includes(itemPathname)
 
-export const mapPathItemToPageTitle =
-    ({
-        pathItem,
-        navTrees = [],
-        currentPageId = '',
-        pageTitle = ''
-    }) => {
-        const result = navTrees.reduce((acc, navTree) => {
-            if (!acc) {
-                const navItemContainingPathItem = navTree.find(navItem => navItem.get(ITEM_URL).startsWith(pathItem))
+export const mapPathItemToPageTitle = ({ pathItem, navTrees = [], currentPageId = '', pageTitle = '' }) => {
+    const result = navTrees.reduce((acc, navTree) => {
+        if (!acc) {
+            const navItemContainingPathItem = navTree.find(navItem => navItem.get(ITEM_URL).startsWith(pathItem))
 
-                if (navItemContainingPathItem) {
-                    return navItemContainingPathItem.get(ITEM_TITLE)
-                }
-
-                const subNavItemContainingPathItem = navTree
-                    .map(navItem => navItem.get(ITEM_SUBNAVIGATION))
-                    .flatten(1)
-                    .find(subNavItem => subNavItem.get(ITEM_URL).endsWith(subNavItem))
-
-                if (subNavItemContainingPathItem) {
-                    return subNavItemContainingPathItem.get(ITEM_TITLE)
-                }
-            } else {
-                return acc
+            if (navItemContainingPathItem) {
+                return navItemContainingPathItem.get(ITEM_TITLE)
             }
-        }, undefined)
 
-        if (result) {
-            return result
+            const subNavItemContainingPathItem = navTree
+                .map(navItem => navItem.get(ITEM_SUBNAVIGATION))
+                .flatten(1)
+                .find(subNavItem => subNavItem.get(ITEM_URL).endsWith(subNavItem))
+
+            if (subNavItemContainingPathItem) {
+                return subNavItemContainingPathItem.get(ITEM_TITLE)
+            }
+        } else {
+            return acc
         }
+    }, undefined)
 
-        const pageIdAsPageTitle = currentPageId === pathItem
-            ? pageTitle
-            : undefined
-
-        if (pageIdAsPageTitle) {
-            return pageIdAsPageTitle
-        }
-
-        // this is always the last check
-        const breadcrumbsTitleFromTranslations = i18n({ key: `breadcrumbs-${pathItem}` })
-
-        if (breadcrumbsTitleFromTranslations) {
-            return breadcrumbsTitleFromTranslations
-        }
-
-        // logInDevOnly({
-        //     message: `${pathItem} could not be resolved as breadcrumb, you can add it to i18n translations`
-        // })
-
-        return pathItem
+    if (result) {
+        return result
     }
+
+    const pageIdAsPageTitle = currentPageId === pathItem ? pageTitle : undefined
+
+    if (pageIdAsPageTitle) {
+        return pageIdAsPageTitle
+    }
+
+    // this is always the last check
+    const breadcrumbsTitleFromTranslations = i18n({ key: `breadcrumbs-${pathItem}` })
+
+    if (breadcrumbsTitleFromTranslations) {
+        return breadcrumbsTitleFromTranslations
+    }
+
+    // logInDevOnly({
+    //     message: `${pathItem} could not be resolved as breadcrumb, you can add it to i18n translations`
+    // })
+
+    return pathItem
+}
 
 export const isNumeric = number => !Number.isNaN(parseFloat(number)) && isFinite(number)
 
-export const countNonUndefinedElements = array => array
-    .filter(value => value !== undefined)
-    .length
+export const countNonUndefinedElements = array => array.filter(value => value !== undefined).length
 
 export const toIconUrl = fileName => `/img/icons/${fileName}.png`
 
@@ -127,11 +122,12 @@ export const scrollToId = id => event => {
 
     const navElement = document.getElementById(id)
 
-    navElement && navElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
-    })
+    navElement &&
+        navElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest',
+        })
 }
 
 export const scrollToHeader = event => {

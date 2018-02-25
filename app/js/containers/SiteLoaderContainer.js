@@ -5,15 +5,14 @@ import { Loader } from '~components'
 
 class _SiteLoaderContainer extends Component {
     render () {
-        return false
-            ? <div className="main-loader" title="Fetching above-the-fold data">
+        return false ? (
+            <div className="main-loader" title="Fetching above-the-fold data">
                 <Loader size="3x" />
             </div>
-            : null
+        ) : null
     }
 }
 
-export const SiteLoaderContainer = connect(
-    state => ({}),
-    dispatch => bindActionCreators({}, dispatch)
-)(_SiteLoaderContainer)
+export const SiteLoaderContainer = connect(state => ({}), dispatch => bindActionCreators({}, dispatch))(
+    _SiteLoaderContainer
+)

@@ -9,18 +9,13 @@ export class NotImplemented extends Component {
         const { pageName } = this.props
 
         return (
-            <main
-                className={classnames(
-                    'container',
-                    { 'hidden': isProduction() }
-                )}
-            >
+            <main className={classnames('container', { hidden: isProduction() })}>
                 <h3>{pageName}</h3>
             </main>
         )
     }
 
     static propTypes = {
-        pageName: string.isRequired
+        pageName: string.isRequired,
     }
 }

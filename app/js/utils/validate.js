@@ -8,7 +8,7 @@ const isNotEmptyString = options => {
         ...options,
         inputValue: options.inputValue,
         hasError,
-        errorMessage: hasError ? `${options.errorMessage || ''} ${i18n({ key: 'validation-empty-string' })}` : ''
+        errorMessage: hasError ? `${options.errorMessage || ''} ${i18n({ key: 'validation-empty-string' })}` : '',
     }
 }
 

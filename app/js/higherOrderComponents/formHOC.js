@@ -11,7 +11,7 @@ import {
     formHasValidationErrorSelector,
     formInputFieldsSelector,
     formServerErrorSelector,
-    isLoadingSelector
+    isLoadingSelector,
 } from '~reducers'
 import * as formActions from '~actions/form'
 
@@ -24,7 +24,7 @@ export const formPropTypes = {
     handleFormSubmit: func,
     handleMultiSelectInputChangePartial: func,
     onCheckBoxChange: func,
-    resetForm: func
+    resetForm: func,
 }
 
 export const formHOC = (formName, DecoratedComponent) => {
@@ -76,13 +76,16 @@ export const formHOC = (formName, DecoratedComponent) => {
         isButtonDisabled = ({ requiredFields = [] } = {}) => {
             const { isSubmitting, fields, hasValidationError, serverError } = this.props
 
-            const areRequiredFieldsMissingValue = requiredFields.map(reqField => fields.get(reqField))
+            const areRequiredFieldsMissingValue = requiredFields
+                .map(reqField => fields.get(reqField))
                 .some(field => field.get(VALUE) === '')
 
-            return hasValidationError
+            return (
+                hasValidationError ||
                 // || serverError.get('hasError')
-                || isSubmitting
-                || areRequiredFieldsMissingValue
+                isSubmitting ||
+                areRequiredFieldsMissingValue
+            )
         }
 
         onCheckboxChange = ({ formName, inputName }) => {
@@ -104,7 +107,7 @@ export const formHOC = (formName, DecoratedComponent) => {
                         resetForm: this.resetForm,
                         isButtonDisabled: this.isButtonDisabled,
                         onCheckBoxChange: this.onCheckboxChange,
-                        formName
+                        formName,
                     }}
                 />
             )
@@ -121,7 +124,7 @@ export const formHOC = (formName, DecoratedComponent) => {
         resetFormInputFields: func,
         resetFormInputError: func,
         submitForm: func,
-        closeModal: func
+        closeModal: func,
     }
 
     return connect(
@@ -130,14 +133,18 @@ export const formHOC = (formName, DecoratedComponent) => {
             isSubmitting: isLoadingSelector(state, `is${toTitleCase(formName)}FormSubmitting`),
             hasValidationError: formHasValidationErrorSelector(state, formName),
             hasEmptyField: formHasEmptyFieldSelector(state, formName),
-            fields: formInputFieldsSelector(state, formName)
+            fields: formInputFieldsSelector(state, formName),
         }),
-        dispatch => bindActionCreators({
-            setFormInputField: formActions.setFormInputField,
-            setFormInputError: formActions.setFormInputError,
-            resetFormInputFields: formActions.resetFormInputFields,
-            resetFormInputError: formActions.resetFormInputError,
-            submitForm: formActions[`submit${toTitleCase(formName)}Form`]
-        }, dispatch)
+        dispatch =>
+            bindActionCreators(
+                {
+                    setFormInputField: formActions.setFormInputField,
+                    setFormInputError: formActions.setFormInputError,
+                    resetFormInputFields: formActions.resetFormInputFields,
+                    resetFormInputError: formActions.resetFormInputError,
+                    submitForm: formActions[`submit${toTitleCase(formName)}Form`],
+                },
+                dispatch
+            )
     )(FormHOC)
 }

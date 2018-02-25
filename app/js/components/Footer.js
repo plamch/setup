@@ -34,12 +34,16 @@ export class Footer extends PureComponent {
                                     <span className="col-sm-3">
                                         <FontAwesomeIcon icon={faAt} />
                                         &nbsp;
-                                        <a href="mailto:dani@plam.ch" itemProp="email">dani@plam.ch</a>
+                                        <a href="mailto:dani@plam.ch" itemProp="email">
+                                            dani@plam.ch
+                                        </a>
                                     </span>
                                     <span className="col-sm-3">
                                         <FontAwesomeIcon icon={faPhone} />
                                         &nbsp;
-                                        <a href="tel:+359 877 155 302" itemProp="telephone">+359 877 155 302</a>
+                                        <a href="tel:+359 877 155 302" itemProp="telephone">
+                                            +359 877 155 302
+                                        </a>
                                     </span>
                                     <span
                                         className="col-sm-5"
@@ -48,13 +52,10 @@ export class Footer extends PureComponent {
                                         itemType="http://schema.org/PostalAddress"
                                     >
                                         <FontAwesomeIcon icon={faMapMarkerAlt} />
-                                            &nbsp;
+                                        &nbsp;
                                         <a href="https://goo.gl/maps/6YYVhoGmEmK2" target="_blank">
-                                            <span itemProp="streetAddress">
-                                                bulevard "Cherni vrah" 47
-                                            </span>, <span itemProp="addressLocality">
-                                                Sofia
-                                            </span>
+                                            <span itemProp="streetAddress">bulevard "Cherni vrah" 47</span>,{' '}
+                                            <span itemProp="addressLocality">Sofia</span>
                                         </a>
                                     </span>
                                 </address>

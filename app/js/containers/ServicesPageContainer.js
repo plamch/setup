@@ -5,17 +5,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 class _ServicesPageContainer extends Component {
-    render() {
-        return (
-            <main className="services-page container">
-            </main>
-        )
+    render () {
+        return <main className="services-page container" />
     }
 }
 
-export const ServicesPageContainer = connect(
-    state => ({
-    }),
-    dispatch => bindActionCreators({
-    }, dispatch)
-)(_ServicesPageContainer)
+export const ServicesPageContainer = connect(state => ({}), dispatch => bindActionCreators({}, dispatch))(
+    _ServicesPageContainer
+)

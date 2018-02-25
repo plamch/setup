@@ -7,13 +7,11 @@ export class Text extends Component {
     render () {
         const { iKey, className } = this.props
 
-        return (
-            <span className={className}>{i18n({ key: iKey })}</span>
-        )
+        return <span className={className}>{i18n({ key: iKey })}</span>
     }
 
     static propTypes = {
         iKey: string.isRequired,
-        className: string
+        className: string,
     }
 }

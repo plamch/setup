@@ -20,7 +20,7 @@ export const configureStore = history => {
     const composeEnhancers = composeWithDevTools({
         name: 'plam',
         serialize: { immutable: Immutable },
-        actionCreators
+        actionCreators,
     })
     const storeEnhancers = composeEnhancers(...enhancers)
     const store = createStore(rootReducer, storeEnhancers)

@@ -1,8 +1,4 @@
-import {
-    MASS_MAIL_FORM,
-    MASS_MAIL_SUBJECT_FIELD,
-    MASS_MAIL_BODY_FIELD
-} from '~constants/form'
+import { MASS_MAIL_FORM, MASS_MAIL_SUBJECT_FIELD, MASS_MAIL_BODY_FIELD } from '~constants/form'
 
 const englishTranslation = {
     'header-home-link-text': 'plam',
@@ -18,9 +14,9 @@ const englishTranslation = {
     'breadcrumbs-search': 'Search',
     'see-less': '- See less',
     'see-more': '+ See more',
-    'print': 'Print',
-    'yes': 'Yes',
-    'no': 'No'
+    print: 'Print',
+    yes: 'Yes',
+    no: 'No',
 }
 
 const frenchTranslation = {
@@ -37,9 +33,9 @@ const frenchTranslation = {
     'breadcrumbs-search': 'Recherche',
     'see-less': '- Voir moins',
     'see-more': '+ Voir plus',
-    'print': 'Imprimer',
-    'yes': 'Oui',
-    'no': 'Non'
+    print: 'Imprimer',
+    yes: 'Oui',
+    no: 'Non',
 }
 
 const bulgarianTranslation = {
@@ -56,9 +52,9 @@ const bulgarianTranslation = {
     'breadcrumbs-search': 'Търсене',
     'see-less': '- Виж по-малко',
     'see-more': '+ Виж повече',
-    'print': 'Принтиране',
-    'yes': 'Да',
-    'no': 'Не'
+    print: 'Принтиране',
+    yes: 'Да',
+    no: 'Не',
 }
 
 export const i18n = ({ key, lang }) => {

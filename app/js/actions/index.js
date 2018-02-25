@@ -5,5 +5,5 @@ import * as form from './form'
 export const actionCreators = {
     ...loading,
     ...common,
-    ...form
+    ...form,
 }

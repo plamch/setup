@@ -10,7 +10,7 @@ export class Loader extends Component {
         return (
             <div
                 className={classnames('la-ball-scale', `la-${size}`, {
-                    'la-dark': isDark
+                    'la-dark': isDark,
                 })}
                 title={title}
             >
@@ -22,12 +22,12 @@ export class Loader extends Component {
     static defaultProps = {
         size: '2x',
         title: 'Loading element data',
-        isDark: true
+        isDark: true,
     }
 
     static propTypes = {
         isDark: bool,
         title: string,
-        size: string
+        size: string,
     }
 }

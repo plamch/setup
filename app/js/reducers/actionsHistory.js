@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 
 const initialState = Immutable.Map({
-    allActions: Immutable.List()
+    allActions: Immutable.List(),
 })
 
 const actionsHistoryReducer = (state = initialState, action) =>

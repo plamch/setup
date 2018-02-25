@@ -8,10 +8,7 @@ export class Chevron extends Component {
         const { isCollapsed, onClick, className, collapsedClass } = this.props
 
         return (
-            <div
-                className={classnames('chevron-holder', className)}
-                onClick={onClick}
-            >
+            <div className={classnames('chevron-holder', className)} onClick={onClick}>
                 <i
                     className={classnames(
                         'fa',
@@ -25,15 +22,13 @@ export class Chevron extends Component {
 
     static defaultProps = {
         className: '',
-        collapsedClass: 'down'
+        collapsedClass: 'down',
     }
 
     static propTypes = {
         isCollapsed: bool.isRequired,
         className: string,
         collapsedClass: string,
-        onClick: func.isRequired
+        onClick: func.isRequired,
     }
 }
-
-

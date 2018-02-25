@@ -9,12 +9,9 @@ export class ButtonWithLoader extends Component {
     render () {
         const { children, onClick, disabled, className, title, isLoading } = this.props
         const buttonProps = {
-            className: classnames(
-                className,
-                { 'btn-loading': isLoading }
-            ),
+            className: classnames(className, { 'btn-loading': isLoading }),
             title,
-            disabled
+            disabled,
         }
 
         if (!disabled) {
@@ -24,20 +21,17 @@ export class ButtonWithLoader extends Component {
         }
 
         return (
-            <Button
-                {...this.props}
-                {...buttonProps}
-            >
-                {
-                    isLoading ?
-                        <span style={{ position: 'relative' }}>
-                            <span style={{ position: 'absolute', top: '-8px' }}>
-                                <Loader title="Submitting form" size="1x" isDark={false} />
-                            </span>
-                            <span>{children}</span>
+            <Button {...this.props} {...buttonProps}>
+                {isLoading ? (
+                    <span style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', top: '-8px' }}>
+                            <Loader title="Submitting form" size="1x" isDark={false} />
                         </span>
-                        : <span>{children}</span>
-                }
+                        <span>{children}</span>
+                    </span>
+                ) : (
+                    <span>{children}</span>
+                )}
             </Button>
         )
     }
@@ -45,7 +39,7 @@ export class ButtonWithLoader extends Component {
     static defaultProps = {
         className: '',
         disabled: false,
-        isLoading: false
+        isLoading: false,
     }
 
     static propTypes = {
@@ -54,6 +48,6 @@ export class ButtonWithLoader extends Component {
         title: string,
         disabled: bool,
         isLoading: bool,
-        children: any
+        children: any,
     }
 }
