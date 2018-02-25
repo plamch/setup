@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "start": "cross-env NODE_ENV=development node devServer.js",
+    "start": "cross-env NODE_ENV=development node --experimental-modules devServer.mjs",
     "build": "cross-env NODE_ENV=production webpack-cli",
     "lint": "eslint app/js/**",
     "lint:fix": "eslint --fix app/js/**",

@@ -13,11 +13,17 @@ const aliasObjectFactory = () => {
     if (dotEnvVarsObj.parsed) {
         const envVarsWithOriginalKeys = dotEnvVarsObj.parsed
 
-        dotEnvVarsObj.alias = Object.keys(envVarsWithOriginalKeys).reduce((acc, key) => Object.assign(
-            { },
-            acc,
-            { [key.toLowerCase().split('_').join('-').substring('path-to-'.length)]: envVarsWithOriginalKeys[key] }
-        ), {})
+        dotEnvVarsObj.alias = Object.keys(envVarsWithOriginalKeys).reduce(
+            (acc, key) =>
+                Object.assign({}, acc, {
+                    [key
+                        .toLowerCase()
+                        .split('_')
+                        .join('-')
+                        .substring('path-to-'.length)]: envVarsWithOriginalKeys[key],
+                }),
+            {}
+        )
     }
 
     return dotEnvVarsObj
@@ -35,59 +41,59 @@ module.exports = {
     entry: [
         'webpack-hot-middleware/client', // second entry for hot module middleware
         'babel-polyfill',
-        './app/js'
+        './app/js',
     ],
     output: {
         path: path.resolve('./dist'),
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: '/',
     },
     stats: {
         colors: true,
         reasons: false,
-        chunks: false
+        chunks: false,
     },
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: 'style-loader'
+                        loader: 'style-loader',
                     },
                     {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
-                            importLoaders: 1
-                        }
+                            importLoaders: 1,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: 'inline'
-                        }
-                    }
-                ]
+                            sourceMap: 'inline',
+                        },
+                    },
+                ],
             },
             {
                 test: /\.png$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'url-loader?limit=100000',
             },
             {
                 test: /\.jpg$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
             },
             {
                 test: /\.(ttf|eot|svg|woff(2)?)(\S+)?$/,
-                loader: 'file-loader?name=[name].[ext]'
-            }
-        ]
+                loader: 'file-loader?name=[name].[ext]',
+            },
+        ],
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -97,45 +103,41 @@ module.exports = {
                 BUILD_VERSION: JSON.stringify(buildVersion),
                 API_URL: JSON.stringify(API_URL),
                 API_PATH: JSON.stringify(API_PATH),
-                HOST_URL: JSON.stringify(HOST_URL)
-            }
+                HOST_URL: JSON.stringify(HOST_URL),
+            },
         }),
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
-            clear: false
+            clear: false,
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
-                context: __dirname
-            }
+                context: __dirname,
+            },
         }),
         new CopyWebpackPlugin([
             {
                 from: `${path.join(__dirname, 'app', 'img')}`,
-                to: 'img'
+                to: 'img',
             },
             {
                 from: `${path.join(__dirname, 'build-assets', 'favicon.ico')}`,
-                to: './'
-            }
-        ])
+                to: './',
+            },
+        ]),
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css', '.png', '.jpg'],
-        alias: Object.assign(
-            { },
-            aliasObjectFactory().alias,
-            {
-                '~actions': path.resolve(__dirname, 'app/js/actions/'),
-                '~components': path.resolve(__dirname, 'app/js/components/'),
-                '~constants': path.resolve(__dirname, 'app/js/constants/'),
-                '~containers': path.resolve(__dirname, 'app/js/containers/'),
-                '~higherOrderComponents': path.resolve(__dirname, 'app/js/higherOrderComponents/'),
-                '~reducers': path.resolve(__dirname, 'app/js/reducers/'),
-                '~saga': path.resolve(__dirname, 'app/js/saga/'),
-                '~store': path.resolve(__dirname, 'app/js/store/'),
-                '~utils': path.resolve(__dirname, 'app/js/utils/')
-            }
-        )
-    }
+        alias: Object.assign({}, aliasObjectFactory().alias, {
+            '~actions': path.resolve(__dirname, 'app/js/actions/'),
+            '~components': path.resolve(__dirname, 'app/js/components/'),
+            '~constants': path.resolve(__dirname, 'app/js/constants/'),
+            '~containers': path.resolve(__dirname, 'app/js/containers/'),
+            '~higherOrderComponents': path.resolve(__dirname, 'app/js/higherOrderComponents/'),
+            '~reducers': path.resolve(__dirname, 'app/js/reducers/'),
+            '~saga': path.resolve(__dirname, 'app/js/saga/'),
+            '~store': path.resolve(__dirname, 'app/js/store/'),
+            '~utils': path.resolve(__dirname, 'app/js/utils/'),
+        }),
+    },
 }

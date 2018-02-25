@@ -1,21 +1,20 @@
 /* eslint-disable no-console */
-const path = require('path')
-const express = require('express')
-const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
-const webpackHotMiddleware = require('webpack-hot-middleware')
+import path from 'path'
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import config from './webpack.config.js'
+import subval1MockData from './mock-data/subval1.json'
+import val1MockData from './mock-data/mockSubFolder/val1.json'
 
 const app = express()
 const isProxy = process.env.IS_PROXY === 'true'
 
 const port = process.env.PORT || 4200
-const config = require('./webpack.config.js')
 const compiler = webpack(config)
-
-const subval1MockData = require('./mock-data/subval1.json')
-const val1MockData = require('./mock-data/mockSubFolder/val1.json')
 
 app.use(webpackDevMiddleware(compiler, { logLevel: 'warn', publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
@@ -40,21 +39,24 @@ if (!isProxy) {
                 const { param1, param2 } = req.query
 
                 switch (param1) {
-                    case 'val1': {
-                        res.send(val1MockData)
-                    }
+                    case 'val1':
+                        {
+                            res.send(val1MockData)
+                        }
                         break
-                    case 'val2': {
-                        switch (param2) {
-                            case 'subval1': {
-                                res.send(subval1MockData)
-                            }
-                                break
-                            default: {
-                                next()
+                    case 'val2':
+                        {
+                            switch (param2) {
+                                case 'subval1':
+                                    {
+                                        res.send(subval1MockData)
+                                    }
+                                    break
+                                default: {
+                                    next()
+                                }
                             }
                         }
-                    }
                         break
                     default: {
                         next()
