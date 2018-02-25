@@ -5,8 +5,8 @@ import {
     NOTIFICATION_TITLE_NETWORK_ERROR,
     UNKNOWN_NETWORK_ERROR,
     MESSAGE_TIMEOUT
-} from 'constants/notification'
-import { createNotification, isDevelopment } from 'utils/utils'
+} from '~constants/notification'
+import { createNotification, isDevelopment } from '~utils/utils'
 
 export function * handleSagaError({ error, errorMapping = '', errorActionCreator }) {
     if (isDevelopment()) {

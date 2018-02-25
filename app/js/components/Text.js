@@ -1,7 +1,7 @@
 import React, { PureComponent as Component } from 'react'
 // noinspection ES6CheckImport
 import { string } from 'prop-types'
-import { i18n } from 'utils/i18n'
+import { i18n } from '~utils/i18n'
 
 export class Text extends Component {
     render () {

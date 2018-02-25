@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Loader } from 'components'
+import { Loader } from '~components'
 
 class _SiteLoaderContainer extends Component {
     render () {

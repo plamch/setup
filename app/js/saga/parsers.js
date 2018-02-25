@@ -1,5 +1,5 @@
 import { Map, List } from 'immutable'
-import { ITEM_TITLE, ITEM_ID } from 'constants/common'
+import { ITEM_TITLE, ITEM_ID } from '~constants/common'
 
 export const fromArrayOrStringToList = item =>
     (

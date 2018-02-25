@@ -11,9 +11,9 @@ import {
     MASS_MAIL_SUBJECT_FIELD,
     MASS_MAIL_BODY_FIELD,
     MASS_MAIL_FORM
-} from 'constants/form'
-import { FIELDS, VALUE, RESET_STORE } from 'constants/global'
-import { NOTIFICATION_TYPE_ERROR } from 'constants/notification'
+} from '~constants/form'
+import { FIELDS, VALUE, RESET_STORE } from '~constants/global'
+import { NOTIFICATION_TYPE_ERROR } from '~constants/notification'
 
 export const initialFieldState = Map({
     value: '',

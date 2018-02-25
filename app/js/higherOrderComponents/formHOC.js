@@ -3,17 +3,17 @@ import { connect } from 'react-redux'
 import { bool, string, func } from 'prop-types'
 import { map } from 'react-immutable-proptypes'
 import { bindActionCreators } from 'redux'
-import { VALUE } from 'constants/global'
-import { toTitleCase } from 'utils/utils'
-import { validate } from 'utils/validate'
+import { VALUE } from '~constants/global'
+import { toTitleCase } from '~utils/utils'
+import { validate } from '~utils/validate'
 import {
     formHasEmptyFieldSelector,
     formHasValidationErrorSelector,
     formInputFieldsSelector,
     formServerErrorSelector,
     isLoadingSelector
-} from 'reducers/index'
-import * as formActions from 'actions/form'
+} from '~reducers'
+import * as formActions from '~actions/form'
 
 export const formPropTypes = {
     isSubmitting: bool,

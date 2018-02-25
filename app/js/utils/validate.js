@@ -1,5 +1,5 @@
-import { MASS_MAIL_FORM, MASS_MAIL_SUBJECT_FIELD } from 'constants/form'
-import { i18n } from 'utils/i18n'
+import { MASS_MAIL_FORM, MASS_MAIL_SUBJECT_FIELD } from '~constants/form'
+import { i18n } from '~utils/i18n'
 
 const isNotEmptyString = options => {
     const hasError = options.hasError || options.inputValue === ''

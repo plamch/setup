@@ -4,16 +4,16 @@ import { bool, string, array, object, func } from 'prop-types'
 import { map } from 'react-immutable-proptypes'
 import classnames from 'classnames'
 import { FormGroup } from 'reactstrap'
-import { Text } from 'components'
+import { Text } from '~components'
 import {
     FORM_INPUT_TYPE_TEXT,
     FORM_INPUT_TYPE_PASSWORD,
     FORM_INPUT_TYPE_SELECT,
     FORM_INPUT_TYPE_TEXTAREA,
     FORM_INPUT_TYPE_RADIO
-} from 'constants/form'
-import { VALUE } from 'constants/global'
-import { i18n } from 'utils/i18n'
+} from '~constants/form'
+import { VALUE } from '~constants/global'
+import { i18n } from '~utils/i18n'
 
 export class FormElement extends Component {
     renderFormControl() {

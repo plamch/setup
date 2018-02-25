@@ -2,7 +2,7 @@ import {
     MASS_MAIL_FORM,
     MASS_MAIL_SUBJECT_FIELD,
     MASS_MAIL_BODY_FIELD
-} from 'constants/form'
+} from '~constants/form'
 
 const englishTranslation = {
     'header-home-link-text': 'plam',

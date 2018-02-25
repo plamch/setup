@@ -6,7 +6,7 @@ import {
     RESET_FORM_INPUT_ERROR,
     RESET_FORM_SERVER_ERROR,
     SUBMIT_MASS_MAIL_FORM
-} from 'constants/form'
+} from '~constants/form'
 
 export const setFormInputField = ({ formName, inputName, inputValue }) => ({
     type: SET_FORM_INPUT_FIELD,

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Logo, Navigation } from 'components'
+import { Logo, Navigation } from '~components'
 
 export class Header extends PureComponent {
     render() {

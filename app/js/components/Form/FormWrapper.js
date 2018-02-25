@@ -2,8 +2,8 @@ import React, { PureComponent as Component } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, func, any } from 'prop-types'
 import { Form, Button } from 'reactstrap'
-import { ButtonWithLoader, Text } from 'components'
-import { i18n } from 'utils/i18n'
+import { ButtonWithLoader, Text } from '~components'
+import { i18n } from '~utils/i18n'
 
 export class FormWrapper extends Component {
     renderFormButton() {

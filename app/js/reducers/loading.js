@@ -1,5 +1,5 @@
 import Immutable from 'immutable'
-import { START_LOADING, STOP_LOADING } from 'constants/loading'
+import { START_LOADING, STOP_LOADING } from '~constants/loading'
 
 const initialState = Immutable.Map()
 

@@ -13,10 +13,10 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap'
-import { getLink } from 'utils/getLink'
-import { HOME_PAGE } from 'constants/navigation'
-import { Logo } from 'components'
-import { scrollToFooter, scrollToId } from 'utils/utils'
+import { getLink } from '~utils/getLink'
+import { HOME_PAGE } from '~constants/navigation'
+import { Logo } from '~components'
+import { scrollToFooter, scrollToId } from '~utils/utils'
 
 export class Navigation extends PureComponent {
     state = { isOpen: false }

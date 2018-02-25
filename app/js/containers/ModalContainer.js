@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 import { map } from 'react-immutable-proptypes'
 import { bindActionCreators } from 'redux'
 import { Modal, Button } from 'reactstrap'
-import { NotificationMessage, Text } from 'components'
-import { formServerErrorSelector } from 'reducers'
-import { resetFormInputFields, resetFormServerError } from 'actions/form'
+import { NotificationMessage, Text } from '~components'
+import { formServerErrorSelector } from '~reducers'
+import { resetFormInputFields, resetFormServerError } from '~actions/form'
 
 class _ModalContainer extends Component {
     closeServerErrorNotification = () => {

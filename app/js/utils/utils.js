@@ -3,9 +3,9 @@ import React from 'react'
 // noinspection ES6CheckImport
 import { any } from 'prop-types'
 import { NotificationManager } from 'react-notifications'
-import { i18n } from 'utils/i18n'
-import { ITEM_SUBNAVIGATION, ITEM_TITLE, ITEM_URL } from 'constants/common'
-import { MESSAGE_TIMEOUT } from 'constants/notification'
+import { i18n } from '~utils/i18n'
+import { ITEM_SUBNAVIGATION, ITEM_TITLE, ITEM_URL } from '~constants/common'
+import { MESSAGE_TIMEOUT } from '~constants/notification'
 
 export const toTitleCase = string => string.charAt(0).toUpperCase() + string.slice(1)
 

@@ -1,7 +1,7 @@
 import {
     START_LOADING,
     STOP_LOADING
-} from 'constants/loading'
+} from '~constants/loading'
 
 export const startLoading = ({ loader }) => ({
     type: START_LOADING,

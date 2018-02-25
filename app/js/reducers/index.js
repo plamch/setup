@@ -3,7 +3,7 @@ import { routerReducer } from 'react-router-redux'
 import loading, * as fromLoading from './loading'
 import form, * as fromForm from './form'
 import actionsHistory from './actionsHistory'
-import { isTesting } from 'utils/utils'
+import { isTesting } from '~utils/utils'
 
 const allReducers = {
     loading,

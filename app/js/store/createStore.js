@@ -4,9 +4,9 @@ import { applyMiddleware, createStore } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
 import Immutable from 'immutable'
-import { actionCreators } from 'actions'
-import { rootReducer } from 'reducers/index'
-import { rootSaga } from 'saga'
+import { actionCreators } from '~actions'
+import { rootReducer } from '~reducers'
+import { rootSaga } from '~saga'
 
 export const configureStore = history => {
     let middlewares = []
@@ -27,7 +27,7 @@ export const configureStore = history => {
 
     if (module.hot) {
         module.hot.accept('../reducers/index', () => {
-            const nextRootReducer = require('reducers/index')
+            const nextRootReducer = require('~reducers/index')
 
             store.replaceReducer(nextRootReducer)
         })

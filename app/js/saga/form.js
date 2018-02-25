@@ -1,10 +1,10 @@
 import React from 'react'
 import { all, put, call, takeLatest } from 'redux-saga/effects'
-import { SUBMIT_MASS_MAIL_FORM, IS_MASS_MAIL_FORM_SUBMITTING } from 'constants/form'
-import { startLoading, stopLoading } from 'actions/loading'
+import { SUBMIT_MASS_MAIL_FORM, IS_MASS_MAIL_FORM_SUBMITTING } from '~constants/form'
+import { startLoading, stopLoading } from '~actions/loading'
 import { handleSagaError } from './utils'
-import { massMailService } from 'utils/services'
-import { createNotification } from 'utils/utils'
+import { massMailService } from '~utils/services'
+import { createNotification } from '~utils/utils'
 
 function * submitMassMailFormWorker({ payload: { massMailSubject, massMailBody, massMailSessionId } }) {
     try {

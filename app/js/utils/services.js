@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
-import { ParseGlobalNetworkError } from 'utils/utils'
+import { ParseGlobalNetworkError } from '~utils/utils'
 import {
     FETCH_SEARCH_RESULTS_SERVICE,
     MASS_MAIL_SERVICE
-} from 'constants/api'
+} from '~constants/api'
 
 const BASE_URL = process.env.API_URL
 const BASE_URL_WITH_PATH = BASE_URL + process.env.API_PATH

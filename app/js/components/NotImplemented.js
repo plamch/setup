@@ -1,7 +1,7 @@
 import React, { PureComponent as Component } from 'react'
 // noinspection ES6CheckImport
 import { string } from 'prop-types'
-import { isProduction } from 'utils/utils'
+import { isProduction } from '~utils/utils'
 import classnames from 'classnames'
 
 export class NotImplemented extends Component {

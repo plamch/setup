@@ -1,6 +1,6 @@
 import React, { PureComponent as Component } from 'react'
 import { Map } from 'immutable'
-import { toTitleCase } from 'utils/utils'
+import { toTitleCase } from '~utils/utils'
 
 export const toggleForm = (formName, DecoratedComponent) => {
     if (typeof formName !== 'string') {
