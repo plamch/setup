@@ -9,9 +9,9 @@
   "plugins": [
     "babel"
   ],
-  "settings": {
-    "import/resolver": "webpack"
-  },
+//  "settings": {
+//    "import/resolver": "webpack"
+//  },
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "indent": 0,
@@ -26,7 +26,6 @@
     "no-alert": "error",
     "no-console": "error",
     "no-lone-blocks": 0,
-    "object-curly-spacing": ["error", "always"],
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": "*", "next": "return" },
