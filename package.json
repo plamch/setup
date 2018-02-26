@@ -14,9 +14,9 @@
     "lint": "eslint app/js/**",
     "lint:fix": "eslint --fix app/js/**",
     "stylelint": "stylelint app/css/**/*",
-    "format": "prettier --write '{src,test}/**/*.js'",
-    "format:check": "prettier --list-different '{src,test}/**/*.js'",
-    "prepare": "npm run clean && npm run format:check && npm run lint && npm run build"
+    "format": "prettier --write app/js/**",
+    "format:check": "prettier --list-different app/js/**",
+    "prepare": "npm run clean && npm run build"
   },
   "author": "plam.ch",
   "license": "ISC",
