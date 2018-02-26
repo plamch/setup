@@ -2,6 +2,7 @@
   "extends": [
     "standard",
     "standard-react",
+    "prettier",
     "prettier/standard",
     "prettier/react"
   ],
@@ -9,9 +10,6 @@
   "plugins": [
     "babel"
   ],
-//  "settings": {
-//    "import/resolver": "webpack"
-//  },
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "indent": 0,
@@ -34,8 +32,8 @@
     ],
     "quote-props": ["error", "as-needed", { "keywords": true, "unnecessary": false }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-indent": 0,
+    "react/jsx-indent-props": 0,
     "react/no-did-mount-set-state": "error",
     "react/no-did-update-set-state": "error",
     "react/no-unused-prop-types": 2,

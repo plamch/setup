@@ -6,7 +6,7 @@ import { ButtonWithLoader, Text } from '~components'
 import { i18n } from '~utils/i18n'
 
 export class FormWrapper extends Component {
-    renderFormButton() {
+    renderFormButton = () => {
         const { isSubmitting, isButtonDisabled, handleFormSubmit, closeModal, formName } = this.props
 
         return (
@@ -28,7 +28,7 @@ export class FormWrapper extends Component {
         )
     }
 
-    render () {
+    render() {
         const { className, children } = this.props
 
         return (
@@ -40,7 +40,7 @@ export class FormWrapper extends Component {
     }
 
     static defaultProps = {
-        className: ''
+        className: '',
     }
 
     static propTypes = {
@@ -50,6 +50,6 @@ export class FormWrapper extends Component {
         className: string,
         handleFormSubmit: func,
         closeModal: func,
-        children: any
+        children: any,
     }
 }
