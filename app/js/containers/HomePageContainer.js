@@ -1,8 +1,4 @@
-/* eslint react/no-unused-prop-types: 0 */
-import React, { Component } from 'react'
-// noinspection ES6CheckImport
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { PureComponent } from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {
     faThumbsUp,
@@ -15,8 +11,7 @@ import {
     faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
 
-@connect()
-export class HomePageContainer extends Component {
+export class HomePageContainer extends PureComponent {
     render() {
         return (
             <main className="home-page container">
