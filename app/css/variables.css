@@ -1,7 +1,8 @@
-@custom-media --md-max (width < 1200px);
-@custom-media --sm-max (width < 992px);
-@custom-media --xs-max (width < 768px);
-@custom-media --xxs-max (width < 422px);
-@custom-media --sm-min (width >= 768px);
-@custom-media --md-min (width >= 992px);
-@custom-media --lg-min (width >= 1200px);
+@custom-media --sm-and-up (width >= 576px);
+@custom-media --md-and-up (width >= 768px);
+@custom-media --lg-and-up (width >= 992px);
+@custom-media --xl-and-up (width >= 1200px);
+@custom-media --xs-and-down (width <= 575.98px);
+@custom-media --sm-and-down (width <= 767.98px);
+@custom-media --md-and-down (width <= 991.98px);
+@custom-media --lg-and-down (width <= 1199.98px);

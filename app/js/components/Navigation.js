@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import {
     Container,
+    Row,
+    Col,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -24,8 +26,8 @@ export class Navigation extends PureComponent {
 
     render() {
         return (
-            <Navbar light expand="md" sticky="top">
-                <Container>
+            <Container>
+                <Navbar light expand="md" sticky="top">
                     <NavbarBrand href="/">
                         <Logo />
                     </NavbarBrand>
@@ -72,8 +74,8 @@ export class Navigation extends PureComponent {
                             </NavItem>
                         </Nav>
                     </Collapse>
-                </Container>
-            </Navbar>
+                </Navbar>
+            </Container>
         )
     }
 }

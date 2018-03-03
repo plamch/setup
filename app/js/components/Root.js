@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 import { configureStore } from '~store/createStore'
 import { withTracker } from '~higherOrderComponents'
 import { SiteLoaderContainer, HomePageContainer, ServicesPageContainer } from '~containers'
-import { SplashPage, Navigation, Footer, NotFound } from '.'
+import { SplashPage, Header, Footer, NotFound } from '.'
 import { SPLASH_PAGE, HOME_PAGE, SERVICE_PAGE } from '~constants/navigation'
 import { getLink } from '~utils/getLink'
 import { isProduction } from '~utils/utils'
@@ -30,7 +30,7 @@ export class Root extends PureComponent {
                         <Helmet>{isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}</Helmet>
                         <NotificationContainer />
                         <SiteLoaderContainer />
-                        <Navigation />
+                        <Header />
                         <Switch>
                             <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
                             <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />

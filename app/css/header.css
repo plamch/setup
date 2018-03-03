@@ -1,0 +1,15 @@
+.header {
+    padding: 0;
+    box-shadow: 0 0 8px 6px rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: background-color 0.15s, box-shadow 0.15s;
+
+    &:hover {
+        box-shadow: 0 0 8px 6px rgba(255, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    @media (--sm-and-up) {
+        margin: 60px 0 50px;
+    }
+}

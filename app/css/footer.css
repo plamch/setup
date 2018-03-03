@@ -1,7 +1,6 @@
 .footer {
-    & .row {
-        margin: 0 auto 30px auto;
-        display: flex;
+    & .section {
+        margin-bottom: 30px;
     }
 
     & h2 .svg-inline--fa {

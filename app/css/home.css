@@ -35,7 +35,7 @@
     & ul {
         list-style: none;
         padding: 0;
-        margin-left: auto;
+        /* margin-left: auto; */
     }
 
     & a {
