@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "engines": {
-    "node": "9.6.1",
+    "node": "9.7.1",
     "npm": "5.7.1"
   },
   "scripts": {
