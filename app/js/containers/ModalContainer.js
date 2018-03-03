@@ -10,7 +10,20 @@ import { NotificationMessage, Text } from '~components'
 import { formServerErrorSelector } from '~reducers'
 import { resetFormInputFields, resetFormServerError } from '~actions/form'
 
-class _ModalContainer extends Component {
+@connect(
+    state => ({
+        serverError: formServerErrorSelector(state),
+    }),
+    dispatch =>
+        bindActionCreators(
+            {
+                resetFormInputFields,
+                resetFormServerError,
+            },
+            dispatch
+        )
+)
+export class ModalContainer extends Component {
     closeServerErrorNotification = () => {
         const { resetFormServerError } = this.props
 
@@ -60,7 +73,7 @@ class _ModalContainer extends Component {
         ) : null
     }
 
-    render () {
+    render() {
         const { isOpen, children } = this.props
 
         return (
@@ -91,17 +104,3 @@ class _ModalContainer extends Component {
         children: any,
     }
 }
-
-export const ModalContainer = connect(
-    state => ({
-        serverError: formServerErrorSelector(state),
-    }),
-    dispatch =>
-        bindActionCreators(
-            {
-                resetFormInputFields,
-                resetFormServerError,
-            },
-            dispatch
-        )
-)(_ModalContainer)

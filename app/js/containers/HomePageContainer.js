@@ -15,7 +15,8 @@ import {
     faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
 
-class _HomePageContainer extends Component {
+@connect()
+export class HomePageContainer extends Component {
     render() {
         return (
             <main className="home-page container">
@@ -195,7 +196,3 @@ class _HomePageContainer extends Component {
         )
     }
 }
-
-export const HomePageContainer = connect(state => ({}), dispatch => bindActionCreators({}, dispatch))(
-    _HomePageContainer
-)
