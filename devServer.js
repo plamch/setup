@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
-import path from 'path'
-import express from 'express'
-import cookieParser from 'cookie-parser'
-import bodyParser from 'body-parser'
-import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
-import config from './webpack.config.js'
-import subval1MockData from './mock-data/subval1.json'
-import val1MockData from './mock-data/mockSubFolder/val1.json'
+const path = require('path')
+const express = require('express')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const config = require('./webpack.config.js')
+const subval1MockData = require('./mock-data/subval1.json')
+const val1MockData = require('./mock-data/mockSubFolder/val1.json')
 
 const app = express()
 const isProxy = process.env.IS_PROXY === 'true'

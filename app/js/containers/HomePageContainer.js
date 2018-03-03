@@ -1,8 +1,4 @@
-/* eslint react/no-unused-prop-types: 0 */
-import React, { Component } from 'react'
-// noinspection ES6CheckImport
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { PureComponent } from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {
     faThumbsUp,
@@ -15,7 +11,7 @@ import {
     faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
 
-class _HomePageContainer extends Component {
+export class HomePageContainer extends PureComponent {
     render() {
         return (
             <main className="home-page container">
@@ -187,7 +183,6 @@ class _HomePageContainer extends Component {
                 <section className="blog section">
                     <h2>
                         <FontAwesomeIcon icon={faPaperPlane} />
-
                         <span className="section-title">What is new</span>
                     </h2>
 
@@ -197,7 +192,3 @@ class _HomePageContainer extends Component {
         )
     }
 }
-
-export const HomePageContainer = connect(state => ({}), dispatch => bindActionCreators({}, dispatch))(
-    _HomePageContainer
-)

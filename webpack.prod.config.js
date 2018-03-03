@@ -38,7 +38,7 @@ const HOST_URL = '/'
 module.exports = {
     mode: 'production',
     context: __dirname,
-    entry: ['babel-polyfill', './app/js'],
+    entry: ['@babel/polyfill', './app/js'],
     output: {
         path: path.join(__dirname, '/dist'),
         filename: `bundle.js`,

@@ -40,11 +40,11 @@ module.exports = {
     context: __dirname,
     entry: [
         'webpack-hot-middleware/client', // second entry for hot module middleware
-        'babel-polyfill',
+        '@babel/polyfill',
         './app/js',
     ],
     output: {
-        path: path.resolve('./dist'),
+        path: '/',
         filename: 'bundle.js',
         publicPath: '/',
     },
