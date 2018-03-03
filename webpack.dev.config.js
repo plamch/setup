@@ -36,7 +36,6 @@ const HOST_URL = '/'
 
 module.exports = {
     mode: 'development',
-    devtool: 'cheap-module-source-map',
     context: __dirname,
     entry: [
         'webpack-hot-middleware/client', // second entry for hot module middleware
@@ -69,15 +68,11 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: true,
                             importLoaders: 1,
                         },
                     },
                     {
                         loader: 'postcss-loader',
-                        options: {
-                            sourceMap: 'inline',
-                        },
                     },
                 ],
             },

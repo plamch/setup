@@ -4,6 +4,7 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const webpack = require('webpack')
+const compression = require('compression')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config.js')
@@ -16,6 +17,7 @@ const isProxy = process.env.IS_PROXY === 'true'
 const port = process.env.PORT || 4200
 const compiler = webpack(config)
 
+app.use(compression())
 app.use(webpackDevMiddleware(compiler, { logLevel: 'warn', publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 // parse application/x-www-form-urlencoded

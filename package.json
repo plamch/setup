@@ -37,6 +37,7 @@
     "bootstrap": "^4.0.0",
     "chalk": "^2.3.2",
     "classnames": "^2.2.5",
+    "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "copy-webpack-plugin": "^4.5.0",
     "cross-env": "^5.1.3",
