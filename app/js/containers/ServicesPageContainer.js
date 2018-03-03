@@ -1,10 +1,10 @@
 /* eslint react/no-unused-prop-types: 0 */
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-class _ServicesPageContainer extends Component {
+class _ServicesPageContainer extends PureComponent {
     render () {
         return <main className="services-page container" />
     }

@@ -1,9 +1,9 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, func } from 'prop-types'
 import classnames from 'classnames'
 
-export class Chevron extends Component {
+export class Chevron extends PureComponent {
     render () {
         const { isCollapsed, onClick, className, collapsedClass } = this.props
 

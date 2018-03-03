@@ -1,5 +1,5 @@
 /* eslint react/no-unused-prop-types: 0 */
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, object, func, any } from 'prop-types'
 import { connect } from 'react-redux'
@@ -23,7 +23,7 @@ import { resetFormInputFields, resetFormServerError } from '~actions/form'
             dispatch
         )
 )
-export class ModalContainer extends Component {
+export class ModalContainer extends PureComponent {
     closeServerErrorNotification = () => {
         const { resetFormServerError } = this.props
 

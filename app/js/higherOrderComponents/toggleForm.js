@@ -1,4 +1,4 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Map } from 'immutable'
 import { toTitleCase } from '~utils/utils'
 
@@ -8,7 +8,7 @@ export const toggleForm = (formName, DecoratedComponent) => {
     }
     formName = toTitleCase(formName)
 
-    class ToggleForm extends Component {
+    class ToggleForm extends PureComponent {
         state = {
             sessionId: '',
             selectedAccount: Map(),

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Redirect, Route, Switch } from 'react-router'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 import { configureStore } from '~store/createStore'
 import { withTracker } from '~higherOrderComponents'
 import { SiteLoaderContainer, HomePageContainer, ServicesPageContainer } from '~containers'
-import { SplashPage, Header, Footer, NotFound } from '.'
+import { SplashPage, Navigation, Footer, NotFound } from '.'
 import { SPLASH_PAGE, HOME_PAGE, SERVICE_PAGE } from '~constants/navigation'
 import { getLink } from '~utils/getLink'
 import { isProduction } from '~utils/utils'
@@ -21,7 +21,7 @@ export const configureStoreWithBrowserHistory = () => configureStore(history)
 
 export const defaultStore = configureStoreWithBrowserHistory()
 
-export class Root extends Component {
+export class Root extends PureComponent {
     render() {
         return (
             <Provider store={defaultStore}>
@@ -30,7 +30,7 @@ export class Root extends Component {
                         <Helmet>{isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}</Helmet>
                         <NotificationContainer />
                         <SiteLoaderContainer />
-                        <Header />
+                        <Navigation />
                         <Switch>
                             <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
                             <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />

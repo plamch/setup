@@ -1,9 +1,9 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string } from 'prop-types'
 import classnames from 'classnames'
 
-export class Loader extends Component {
+export class Loader extends PureComponent {
     render () {
         const { isDark, title, size } = this.props
 

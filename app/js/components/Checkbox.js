@@ -1,8 +1,8 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, func } from 'prop-types'
 
-export class Checkbox extends Component {
+export class Checkbox extends PureComponent {
     render () {
         const { checked, id, value, onChange } = this.props
 

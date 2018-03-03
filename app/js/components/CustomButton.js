@@ -1,11 +1,11 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, func, any } from 'prop-types'
 import classnames from 'classnames'
 import { Button } from 'reactstrap'
 import { Loader } from '.'
 
-export class ButtonWithLoader extends Component {
+export class ButtonWithLoader extends PureComponent {
     render () {
         const { children, onClick, disabled, className, title, isLoading } = this.props
         const buttonProps = {

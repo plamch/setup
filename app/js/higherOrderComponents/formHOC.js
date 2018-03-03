@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bool, string, func } from 'prop-types'
 import { map } from 'react-immutable-proptypes'
@@ -28,7 +28,7 @@ export const formPropTypes = {
 }
 
 export const formHOC = (formName, DecoratedComponent) => {
-    class FormHOC extends Component {
+    class FormHOC extends PureComponent {
         validateInput = ({ inputName, inputValue }) => {
             const { hasValidationError } = this.props
             const { setFormInputError, resetFormInputError } = this.props

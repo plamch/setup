@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { list } from 'react-immutable-proptypes'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 export const LoaderWrapper = DecoratedComponent => {
-    class LoaderWrapper extends Component {
+    class LoaderWrapper extends PureComponent {
         render () {
             return this.props.mainMenu.size <= 0 ? null : <DecoratedComponent {...this.props} />
         }

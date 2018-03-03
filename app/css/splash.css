@@ -36,13 +36,15 @@
     }
 }
 
-.splash-page {
-    &.container {
-        max-width: 720px;
-    }
+/*
+.container {
+    max-width: 720px;
+}
+*/
 
+.splash-page {
     & .section {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 
     & dd {

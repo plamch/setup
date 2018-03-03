@@ -1,0 +1,10 @@
+.address {
+    padding: 0 0 30px;
+
+    & .address-item {
+        display: inline-block;
+        padding: 15px;
+        white-space: nowrap;
+    }
+}
+

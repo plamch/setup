@@ -1,11 +1,11 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, func, any } from 'prop-types'
 import { Form, Button } from 'reactstrap'
 import { ButtonWithLoader, Text } from '~components'
 import { i18n } from '~utils/i18n'
 
-export class FormWrapper extends Component {
+export class FormWrapper extends PureComponent {
     renderFormButton = () => {
         const { isSubmitting, isButtonDisabled, handleFormSubmit, closeModal, formName } = this.props
 

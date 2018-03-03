@@ -1,9 +1,9 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { string, func } from 'prop-types'
 import classnames from 'classnames'
 
-export class NotificationMessage extends Component {
+export class NotificationMessage extends PureComponent {
     render () {
         const { type, message, close } = this.props
 

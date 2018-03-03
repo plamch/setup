@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
-import { Logo, Navigation } from '~components'
+import { Navigation } from '~components'
 
 export class Header extends PureComponent {
     render() {
         return (
-            <header className="header container">
+            <header className="header">
                 <Navigation />
             </header>
         )

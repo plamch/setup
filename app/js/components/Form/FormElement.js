@@ -1,4 +1,4 @@
-import React, { PureComponent as Component } from 'react'
+import React, { PureComponent } from 'react'
 // noinspection ES6CheckImport
 import { bool, string, array, object, func } from 'prop-types'
 import { map } from 'react-immutable-proptypes'
@@ -15,7 +15,7 @@ import {
 import { VALUE } from '~constants/global'
 import { i18n } from '~utils/i18n'
 
-export class FormElement extends Component {
+export class FormElement extends PureComponent {
     renderFormControl = () => {
         const {
             formName,
