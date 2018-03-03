@@ -155,6 +155,7 @@ export class HomePageContainer extends PureComponent {
                                 printer took a galley of type and scrambled it to make a type specimen book.
                             </p>
                         </span>
+
                         <div className="portfolio-button-wrapper">
                             <button className="btn btn-primary">See portfolio</button>
                         </div>
