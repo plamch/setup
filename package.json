@@ -33,7 +33,6 @@
     "babel-eslint": "^8.2.2",
     "babel-loader": "^8.0.0-beta.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
-    "babel-preset-react-hmre": "^1.1.1",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
     "chalk": "^2.3.2",

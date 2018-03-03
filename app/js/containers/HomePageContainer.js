@@ -11,7 +11,6 @@ import {
     faCubes,
     faCertificate,
     faStar,
-    faPencilAlt,
     faQuoteLeft,
     faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
@@ -186,7 +185,7 @@ class _HomePageContainer extends Component {
                 </section>
                 <section className="blog section">
                     <h2>
-                        <FontAwesomeIcon icon={faPencilAlt} />
+                        <FontAwesomeIcon icon={faPaperPlane} />
                         <span className="section-title">What is new</span>
                     </h2>
 
