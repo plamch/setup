@@ -11,13 +11,12 @@ import {
     faCubes,
     faCertificate,
     faStar,
-    faPencilAlt,
     faQuoteLeft,
     faPaperPlane,
 } from '@fortawesome/fontawesome-free-solid'
 
 class _HomePageContainer extends Component {
-    render () {
+    render() {
         return (
             <main className="home-page container">
                 <section className="services section" id="services-section">
@@ -160,6 +159,7 @@ class _HomePageContainer extends Component {
                                 printer took a galley of type and scrambled it to make a type specimen book.
                             </p>
                         </span>
+
                         <div className="portfolio-button-wrapper">
                             <button className="btn btn-primary">See portfolio</button>
                         </div>
@@ -186,7 +186,8 @@ class _HomePageContainer extends Component {
                 </section>
                 <section className="blog section">
                     <h2>
-                        <FontAwesomeIcon icon={faPencilAlt} />
+                        <FontAwesomeIcon icon={faPaperPlane} />
+
                         <span className="section-title">What is new</span>
                     </h2>
 
