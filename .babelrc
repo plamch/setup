@@ -1,11 +1,4 @@
 {
-  "env": {
-    "development": {
-      "presets": ["react", "es2017", "stage-1", "react-hmre"]
-    },
-    "production": {
-      "presets": ["react", "es2017", "stage-1"],
-      "plugins": ["transform-react-remove-prop-types"]
-    }
-  }
+  "presets": ["@babel/react", "@babel/env", "@babel/stage-1"],
+  "plugins": ["react-hot-loader/babel"]
 }

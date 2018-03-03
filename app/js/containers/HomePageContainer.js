@@ -17,7 +17,7 @@ import {
 } from '@fortawesome/fontawesome-free-solid'
 
 class _HomePageContainer extends Component {
-    render () {
+    render() {
         return (
             <main className="home-page container">
                 <section className="services section" id="services-section">

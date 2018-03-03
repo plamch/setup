@@ -21,38 +21,31 @@ export const configureStoreWithBrowserHistory = () => configureStore(history)
 
 export const defaultStore = configureStoreWithBrowserHistory()
 
-export const createRoot = (store = defaultStore, name = 'Root') => {
-    return class Root extends Component {
-        render () {
-            return (
-                <Provider store={store}>
-                    <ConnectedRouter history={history}>
-                        <div className="siteWrapper">
-                            <Helmet>
-                                {isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}
-                            </Helmet>
-                            <NotificationContainer />
-                            <SiteLoaderContainer />
-                            <Header />
-                            <Switch>
-                                <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
-                                <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />
-                                <Route path={getLink(HOME_PAGE)} component={withTracker(HomePageContainer)} />
-                                <Route
-                                    path={getLink(`${SERVICE_PAGE}/:service`)}
-                                    component={withTracker(ServicesPageContainer)}
-                                />
-                                <Route component={withTracker(NotFound)} />
-                            </Switch>
-                            <Footer />
-                            <div className="d-none">{buildVersion}</div>
-                        </div>
-                    </ConnectedRouter>
-                </Provider>
-            )
-        }
-
-        // noinspection JSUnusedGlobalSymbols
-        static displayName = name
+export class Root extends Component {
+    render() {
+        return (
+            <Provider store={defaultStore}>
+                <ConnectedRouter history={history}>
+                    <div className="siteWrapper">
+                        <Helmet>{isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}</Helmet>
+                        <NotificationContainer />
+                        <SiteLoaderContainer />
+                        <Header />
+                        <Switch>
+                            <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
+                            <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />
+                            <Route path={getLink(HOME_PAGE)} component={withTracker(HomePageContainer)} />
+                            <Route
+                                path={getLink(`${SERVICE_PAGE}/:service`)}
+                                component={withTracker(ServicesPageContainer)}
+                            />
+                            <Route component={withTracker(NotFound)} />
+                        </Switch>
+                        <Footer />
+                        <div className="d-none">{buildVersion}</div>
+                    </div>
+                </ConnectedRouter>
+            </Provider>
+        )
     }
 }
