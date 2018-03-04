@@ -37,6 +37,7 @@
     "bootstrap": "^4.0.0",
     "chalk": "^2.3.2",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.18",
     "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "copy-webpack-plugin": "^4.5.0",
@@ -95,6 +96,6 @@
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.10",
     "webpack-dev-middleware": "^3.0.0",
-    "webpack-hot-middleware": "^2.21.1"
+    "webpack-hot-middleware": "^2.21.2"
   }
 }

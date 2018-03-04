@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const chalk = require('chalk')
@@ -61,20 +62,20 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                            },
                         },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                    },
-                ],
+                        {
+                            loader: 'postcss-loader',
+                        },
+                    ],
+                }),
             },
             {
                 test: /\.png$/,
@@ -101,14 +102,10 @@ module.exports = {
                 HOST_URL: JSON.stringify(HOST_URL),
             },
         }),
+        new ExtractTextPlugin(`bundle.css`),
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
             clear: false,
-        }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                context: __dirname,
-            },
         }),
         new CopyWebpackPlugin([
             {

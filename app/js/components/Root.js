@@ -27,7 +27,10 @@ export class Root extends PureComponent {
             <Provider store={defaultStore}>
                 <ConnectedRouter history={history}>
                     <div className="siteWrapper">
-                        <Helmet>{isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}</Helmet>
+                        <Helmet>
+                            {isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}
+                            <link rel="stylesheet" href="./bundle.css" />
+                        </Helmet>
                         <NotificationContainer />
                         <SiteLoaderContainer />
                         <Header />

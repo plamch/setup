@@ -58,24 +58,20 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            importLoaders: 1,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                            },
                         },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: 'inline',
+                        {
+                            loader: 'postcss-loader',
                         },
-                    },
-                ],
+                    ],
+                }),
             },
             {
                 test: /\.png$/,
