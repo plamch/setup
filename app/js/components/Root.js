@@ -29,7 +29,7 @@ export class Root extends PureComponent {
                     <div className="siteWrapper">
                         <Helmet>
                             {isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}
-                            <link rel="stylesheet" href="./bundle.css" />
+                            <link rel="stylesheet" href={'./bundle.css'} />
                         </Helmet>
                         <NotificationContainer />
                         <SiteLoaderContainer />
