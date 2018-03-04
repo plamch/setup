@@ -58,6 +58,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
+                include: path.resolve(__dirname, 'app'),
                 use: [
                     {
                         loader: 'cache-loader',
@@ -67,7 +68,6 @@ module.exports = {
                     },
                     'babel-loader',
                 ],
-                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -134,7 +134,7 @@ module.exports = {
         ]),
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.css', '.png', '.jpg'],
+        extensions: ['.js', '.css', '.png', '.jpg'],
         alias: Object.assign({}, aliasObjectFactory().alias, {
             '~actions': path.resolve(__dirname, 'app/js/actions/'),
             '~components': path.resolve(__dirname, 'app/js/components/'),
@@ -146,5 +146,6 @@ module.exports = {
             '~store': path.resolve(__dirname, 'app/js/store/'),
             '~utils': path.resolve(__dirname, 'app/js/utils/'),
         }),
+        symlinks: false,
     },
 }

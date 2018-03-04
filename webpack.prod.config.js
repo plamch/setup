@@ -137,5 +137,6 @@ module.exports = {
             '~store': path.resolve(__dirname, 'app/js/store/'),
             '~utils': path.resolve(__dirname, 'app/js/utils/'),
         }),
+        symlinks: false,
     },
 }
