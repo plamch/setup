@@ -5,13 +5,14 @@ import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter } from 'react-router-redux'
 import { NotificationContainer } from 'react-notifications'
 import { Helmet } from 'react-helmet'
+import Loadable from 'react-loadable'
 import { configureStore } from '~store/createStore'
 import { withTracker } from '~higherOrderComponents'
-import { SiteLoaderContainer, HomePageContainer, ServicesPageContainer } from '~containers'
-import { SplashPage, Header, Footer, NotFound } from '.'
+import { SiteLoaderContainer, ServicesPageContainer } from '~containers'
 import { SPLASH_PAGE, HOME_PAGE, SERVICE_PAGE } from '~constants/navigation'
 import { getLink } from '~utils/getLink'
 import { isProduction } from '~utils/utils'
+import { Header, Footer, NotFound, Loader } from '.'
 
 const buildVersion = process.env.BUILD_VERSION
 
@@ -20,6 +21,16 @@ const history = createHistory()
 export const configureStoreWithBrowserHistory = () => configureStore(history)
 
 export const defaultStore = configureStoreWithBrowserHistory()
+
+const loadPage = pageName =>
+    withTracker(
+        Loadable({
+            loader: () => import(`../containers/${pageName}Container`),
+            loading() {
+                return <Loader />
+            },
+        })
+    )
 
 export class Root extends PureComponent {
     render() {
@@ -39,8 +50,8 @@ export class Root extends PureComponent {
                         <Header />
                         <Switch>
                             <Redirect exact from="/" to={getLink(SPLASH_PAGE)} />
-                            <Route path={getLink(SPLASH_PAGE)} component={withTracker(SplashPage)} />
-                            <Route path={getLink(HOME_PAGE)} component={withTracker(HomePageContainer)} />
+                            <Route path={getLink(SPLASH_PAGE)} component={loadPage(SPLASH_PAGE)} />
+                            <Route path={getLink(HOME_PAGE)} component={loadPage(HOME_PAGE)} />
                             <Route
                                 path={getLink(`${SERVICE_PAGE}/:service`)}
                                 component={withTracker(ServicesPageContainer)}

@@ -42,7 +42,8 @@ module.exports = {
     entry: ['@babel/polyfill', './app/js'],
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: `bundle.js`,
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         publicPath: '/',
     },
     stats: {

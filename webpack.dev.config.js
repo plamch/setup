@@ -45,7 +45,8 @@ module.exports = {
     ],
     output: {
         path: '/',
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         publicPath: '/',
     },
     stats: {

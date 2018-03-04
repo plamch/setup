@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faCogs, faSync, faHeart } from '@fortawesome/fontawesome-free-solid'
 
 export class SplashPage extends PureComponent {
-    render () {
+    render() {
         return (
             <main className="splash-page container">
                 <section className="services section">
@@ -106,3 +106,5 @@ export class SplashPage extends PureComponent {
         )
     }
 }
+
+export default SplashPage
