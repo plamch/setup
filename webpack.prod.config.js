@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const chalk = require('chalk')
 const dotEnvVarsObj = require('dotenv').config()
 
@@ -88,6 +89,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
