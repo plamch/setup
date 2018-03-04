@@ -11,6 +11,7 @@
     "clean": "rimraf dist",
     "start": "cross-env NODE_ENV=development node devServer.js",
     "build": "cross-env NODE_ENV=production webpack-cli",
+    "stats": "npm run build -- --profile --json > stats.json",
     "lint": "eslint app/js/**",
     "lint:fix": "eslint --fix app/js/**",
     "stylelint": "stylelint app/css/**/*",

@@ -78,3 +78,8 @@
 * app/js/saga/\*\*
 
 ### react-notifications is used as third-party library for easier implementation of notifications
+
+## For bundle stats
+### npm run stats, then upload the newly generated JSON from the project root to Webpack Chart
+
+*https://alexkuz.github.io/webpack-chart/

@@ -13,3 +13,4 @@ npm-debug.log
 /.env
 /coverage
 .scannerwork
+stats.json
