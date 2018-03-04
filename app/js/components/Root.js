@@ -28,8 +28,11 @@ export class Root extends PureComponent {
                 <ConnectedRouter history={history}>
                     <div className="siteWrapper">
                         <Helmet>
-                            {isProduction() ? null : <meta name="robots" content="noindex, nofollow" />}
-                            <link rel="stylesheet" href={'./bundle.css'} />
+                            {!isProduction() ? (
+                                <meta name="robots" content="noindex, nofollow" />
+                            ) : (
+                                <link rel="stylesheet" href={'./bundle.css'} />
+                            )}
                         </Helmet>
                         <NotificationContainer />
                         <SiteLoaderContainer />

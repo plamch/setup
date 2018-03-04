@@ -102,7 +102,7 @@ module.exports = {
                 HOST_URL: JSON.stringify(HOST_URL),
             },
         }),
-        new ExtractTextPlugin(`bundle.css`),
+        new ExtractTextPlugin({ filename: 'bundle.css', disable: true }),
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
             clear: false,
