@@ -58,7 +58,15 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
+                use: [
+                    {
+                        loader: 'cache-loader',
+                        options: {
+                            cacheDirectory: path.resolve('cache'),
+                        },
+                    },
+                    'babel-loader',
+                ],
                 exclude: /node_modules/,
             },
             {
@@ -66,6 +74,12 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
+                        {
+                            loader: 'cache-loader',
+                            options: {
+                                cacheDirectory: path.resolve('cache'),
+                            },
+                        },
                         {
                             loader: 'css-loader',
                             options: {

@@ -36,6 +36,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
+    "cache-loader": "^1.2.2",
     "chalk": "^2.3.2",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.18",
