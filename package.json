@@ -40,7 +40,7 @@
     "cache-loader": "^1.2.2",
     "chalk": "^2.3.2",
     "classnames": "^2.2.5",
-    "clean-webpack-plugin": "^0.1.18",
+    "clean-webpack-plugin": "^0.1.19",
     "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "copy-webpack-plugin": "^4.5.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "express": "^4.16.2",
@@ -97,9 +97,9 @@
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.0.1",
-    "webpack": "^4.1.0",
+    "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-middleware": "^3.0.0",
+    "webpack-dev-middleware": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2"
   }
 }
