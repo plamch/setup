@@ -19,9 +19,6 @@ const run = () => {
 
 run()
 
-// noinspection JSUnresolvedFunction
-window.addEventListener('DOMContentLoaded', run, false)
-
 // Webpack Hot Module Replacement API
 if (module.hot) {
     module.hot.accept('./components/Root', () => {
