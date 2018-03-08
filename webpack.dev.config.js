@@ -45,7 +45,7 @@ module.exports = {
         './app/js',
     ],
     output: {
-        path: '/',
+        path: path.join(__dirname),
         filename: '[name].[hash].js',
         chunkFilename: '[name].[hash].js',
         publicPath: '/',

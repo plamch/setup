@@ -16,9 +16,10 @@ const isProxy = process.env.IS_PROXY === 'true'
 
 const port = process.env.PORT || 4200
 const compiler = webpack(config)
+const devMiddleware = webpackDevMiddleware(compiler, { logLevel: 'warn', publicPath: config.output.publicPath })
 
 app.use(compression())
-app.use(webpackDevMiddleware(compiler, { logLevel: 'warn', publicPath: config.output.publicPath }))
+app.use(devMiddleware)
 app.use(webpackHotMiddleware(compiler))
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -72,7 +73,8 @@ if (!isProxy) {
 }
 
 app.use('/*', (req, res) => {
-    res.sendFile(path.resolve('app/', 'index.html'))
+    res.write(devMiddleware.fileSystem.readFileSync(path.join(__dirname, 'index.html')))
+    res.end()
 })
 
 app.listen(port, error => {
