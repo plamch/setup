@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const chalk = require('chalk')
 const dotEnvVarsObj = require('dotenv').config()
@@ -45,8 +46,8 @@ module.exports = {
     ],
     output: {
         path: '/',
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        filename: '[name].[hash].js',
+        chunkFilename: '[name].[hash].js',
         publicPath: '/',
     },
     stats: {
@@ -108,6 +109,10 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'plam',
+            template: './app/index.ejs',
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('development'),
@@ -124,12 +129,12 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: `${path.join(__dirname, 'app', 'img')}`,
-                to: 'img',
-            },
-            {
                 from: `${path.join(__dirname, 'build-assets', 'favicon.ico')}`,
                 to: './',
+            },
+            {
+                from: `${path.join(__dirname, 'app', 'img')}`,
+                to: 'img',
             },
         ]),
     ],

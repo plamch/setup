@@ -2,10 +2,11 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const chalk = require('chalk')
 const dotEnvVarsObj = require('dotenv').config()
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const buildVersion = '0.0.0'
 
@@ -42,8 +43,8 @@ module.exports = {
     entry: ['@babel/polyfill', './app/js'],
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js',
         publicPath: '/',
     },
     stats: {
@@ -91,6 +92,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: 'plam',
+            template: './app/index.ejs',
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
@@ -107,10 +112,6 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: `${path.join(__dirname, 'app', 'index.html')}`,
-                to: './',
-            },
-            {
                 from: `${path.join(__dirname, 'build-assets', '.htaccess')}`,
                 to: './',
             },
@@ -120,12 +121,12 @@ module.exports = {
             },
             {
                 from: `${path.join(__dirname, 'app', 'img')}`,
-                to: './img',
+                to: 'img',
             },
         ]),
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.css', '.png', '.jpg'],
+        extensions: ['.js', '.css', '.png', '.jpg'],
         alias: Object.assign({}, aliasObjectFactory().alias, {
             '~actions': path.resolve(__dirname, 'app/js/actions/'),
             '~components': path.resolve(__dirname, 'app/js/components/'),
