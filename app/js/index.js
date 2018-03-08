@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { render } from 'react-snapshot'
 import { AppContainer } from 'react-hot-loader'
 import { Root } from './components/Root'
 import '../css/index.css'
@@ -16,6 +16,8 @@ const renderApp = Component => {
 const run = () => {
     renderApp(Root)
 }
+
+run()
 
 // noinspection JSUnresolvedFunction
 window.addEventListener('DOMContentLoaded', run, false)
