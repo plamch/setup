@@ -1,11 +1,11 @@
 .navbar {
     padding: 0;
 
-    & .navbar-brand {
+    .navbar-brand {
         padding-bottom: 0;
     }
 
-    & .logo {
+    .logo {
         display: block;
         padding-top: 10px;
         width: 150px;
@@ -13,7 +13,7 @@
         cursor: pointer;
     }
 
-    & .logo-icon {
+    .logo-icon {
         display: none;
     }
 }

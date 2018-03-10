@@ -1,16 +1,16 @@
 .footer {
-    & .section {
+    .section {
         margin-bottom: 30px;
     }
 
-    & h2 .svg-inline--fa {
+    h2 .svg-inline--fa {
         position: relative;
         top: 7px;
         left: 0;
         color: #000;
     }
 
-    & .googlemap {
+    .googlemap {
         width: 100%;
         border: none;
         margin: auto;

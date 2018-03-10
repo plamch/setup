@@ -60,7 +60,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -72,6 +72,9 @@ module.exports = {
                         },
                         {
                             loader: 'postcss-loader',
+                        },
+                        {
+                            loader: 'sass-loader',
                         },
                     ],
                 }),

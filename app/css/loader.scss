@@ -13,6 +13,8 @@
     display: block;
     font-size: 0;
     color: #fff;
+    width: 32px;
+    height: 32px;
 }
 
 .la-ball-scale.la-dark {
@@ -24,14 +26,6 @@
     float: none;
     background-color: currentColor;
     border: 0 solid currentColor;
-}
-
-.la-ball-scale {
-    width: 32px;
-    height: 32px;
-}
-
-.la-ball-scale > div {
     width: 32px;
     height: 32px;
     border-radius: 0;

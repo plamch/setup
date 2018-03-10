@@ -36,72 +36,70 @@
     }
 }
 
-/*
-.container {
-    max-width: 720px;
-}
-*/
+//.container {
+//    max-width: 720px;
+//}
 
 .splash-page {
-    & .section {
+    .section {
         margin-bottom: 60px;
     }
 
-    & dd {
+    dd {
         padding-bottom: 10px;
     }
 
-    & h1,
-    & h2,
-    & h3 {
+    h1,
+    h2,
+    h3 {
         font-weight: 400;
         line-height: 1.4;
     }
 
-    & h1,
-    & h3 {
+    h1,
+    h3 {
         font-size: 1.5rem;
     }
 
-    & h2 {
+    h2 {
         position: relative;
         padding-left: 46px;
         margin-bottom: 30px;
     }
 
-    & h2 .svg-inline--fa {
+    h2 .svg-inline--fa {
         position: absolute;
         top: 7px;
         left: 0;
         color: #000;
     }
 
-    & ul {
+    ul {
         list-style: none;
         padding: 0;
     }
 
-    & .address > span {
+    .address > span {
         padding-bottom: 6px;
     }
 
-    & a {
+    a {
         color: inherit;
     }
 
-    & .services .svg-inline--fa {
+    .services .svg-inline--fa {
         color: #1e88e5;
     }
 
-    & .technology .svg-inline--fa {
+    .technology .svg-inline--fa {
         color: #f9a825;
     }
 
-    & .methodology .svg-inline--fa {
+    .methodology .svg-inline--fa {
         color: #43a047;
     }
 
-    & .values .svg-inline--fa {
+    .values .svg-inline--fa {
         color: #e53935;
     }
 }

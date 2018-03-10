@@ -1,13 +1,13 @@
 .contact-us-form {
     margin-bottom: 30px;
 
-    & .contact-us-form-title {
+    .contact-us-form-title {
         margin-bottom: 15px;
         font-size: 20px;
         font-weight: normal;
     }
 
-    & form {
+    form {
         display: block;
         padding: 30px;
         border-radius: 2px;
@@ -15,7 +15,7 @@
     }
 
     /* noinspection CssOptimizeSimilarProperties */
-    & [type='submit']:hover {
+    [type='submit']:hover {
         border-color: #c6c6c6;
         color: #fff;
         cursor: pointer;
@@ -25,8 +25,8 @@
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
 
-    & input,
-    & textarea {
+    input,
+    textarea {
         border-radius: 2px;
         width: 100%;
         display: block;
@@ -53,11 +53,11 @@
         }
     }
 
-    & .row {
+    .row {
         margin: 20px auto 0 auto;
     }
 
-    & address {
+    address {
         margin: auto;
     }
 }
