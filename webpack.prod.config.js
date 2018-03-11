@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const { GenerateSW } = require('workbox-webpack-plugin')
 const chalk = require('chalk')
 const dotEnvVarsObj = require('dotenv').config()
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -127,6 +128,14 @@ module.exports = {
                 to: 'img',
             },
         ]),
+        new GenerateSW({
+            // these options encourage the ServiceWorkers to get in there fast
+            // and not allow any straggling "old" SWs to hang around
+            // commented-out because of version 3 of the plugin
+            // https://github.com/GoogleChrome/workbox/issues/853
+            // clientsClaim: true,
+            // skipWaiting: true,
+        }),
     ],
     resolve: {
         extensions: ['.js', '.css', '.png', '.jpg'],
