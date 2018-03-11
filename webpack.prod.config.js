@@ -120,6 +120,10 @@ module.exports = {
                 to: './',
             },
             {
+                from: `${path.join(__dirname, 'build-assets', 'manifest.json')}`,
+                to: './',
+            },
+            {
                 from: `${path.join(__dirname, 'build-assets', 'favicon.ico')}`,
                 to: './',
             },

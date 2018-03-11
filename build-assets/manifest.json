@@ -1,0 +1,14 @@
+{
+  "name": "plam.ch",
+  "short_name": "plam",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#1e88e5",
+  "description": "plam app",
+  "icons": [{
+    "src": "img/touch/homescreen512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
